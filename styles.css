@@ -998,9 +998,10 @@ body.menu-open::before {
 
 .signal-card__header {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .signal-card__label {
@@ -1163,6 +1164,7 @@ body.menu-open::before {
 .stock-header {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.2rem;
 }
 
