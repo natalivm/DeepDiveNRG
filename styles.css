@@ -979,6 +979,10 @@ body.menu-open::before {
   margin-bottom: 1.5rem;
 }
 
+.stocks-level-title--yellow {
+  color: #fbbf24;
+}
+
 .stocks-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
