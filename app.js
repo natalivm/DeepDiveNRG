@@ -29,22 +29,19 @@ function createBottomNav(pages) {
     const a = document.createElement('a');
     a.href = href;
     a.className = 'bottom-nav-item' + (isActive ? ' active' : '');
-
     const svgNS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(svgNS, 'svg');
     svg.setAttribute('class', 'bottom-nav-icon');
     svg.setAttribute('viewBox', '0 0 24 24');
     svg.setAttribute('aria-hidden', 'true');
-    (NAV_ICONS[id] || []).forEach((d) => {
+    paths.forEach((d) => {
       const path = document.createElementNS(svgNS, 'path');
       path.setAttribute('d', d);
       svg.appendChild(path);
     });
-
     const span = document.createElement('span');
     span.className = 'bottom-nav-label';
     span.textContent = label;
-
     a.appendChild(svg);
     a.appendChild(span);
     nav.appendChild(a);

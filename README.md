@@ -21,16 +21,11 @@ This site is deployed via GitHub Pages from the `main` branch root directory.
 
 ```
 DeepDiveNRG/
-├── index.html      # Home page with hero, about, services, contact sections + navigation tabs
-├── page1.html      # Tab 1 — Інвестиційний аналіз (Ukrainian, lang="uk")
-├── page2.html      # Tab 2 — AI Premium Rotation (Ukrainian, lang="uk")
-├── page3.html      # Tab 3 — placeholder sub-page
-├── app.js          # Main JavaScript (bottom nav, SW registration, interactions)
-├── config.js       # Centralized site configuration (pages, titles, colours)
+├── index.html      # Main page with hero, about, services, contact sections + 3 navigation tabs
+├── page1.html      # Tab 1 sub-page with back button
+├── page2.html      # Tab 2 sub-page with back button
+├── page3.html      # Tab 3 sub-page with back button
 ├── styles.css      # Dark theme stylesheet (responsive, CSS custom properties)
-├── sw.js           # Service Worker (offline caching with date-based versioning)
-├── manifest.json   # PWA manifest
-├── icons/          # SVG icons for PWA
 ├── _config.yml     # GitHub Pages configuration
 ├── .nojekyll       # Skips Jekyll processing (plain HTML/CSS/JS site)
 ├── .eleventy.js    # Eleventy build configuration (optional local dev)
