@@ -138,8 +138,10 @@ nav:first-of-type {
 
 /* ===== Tabs Bar ===== */
 .tabs-bar {
-  position: sticky;
+  position: fixed;
   top: calc(var(--nav-height) + var(--safe-top));
+  left: 0;
+  right: 0;
   z-index: 90;
   height: var(--tabs-height);
   background-color: var(--bg-secondary);
