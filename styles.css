@@ -201,8 +201,12 @@ nav:first-of-type {
 }
 
 .page-section {
-  padding: calc(var(--nav-height) + var(--tabs-height) + var(--safe-top) + 2rem) 5% 4rem;
+  padding: 3rem 5% 4rem;
   min-height: 60vh;
+}
+
+.page-main > .page-section:first-child {
+  padding-top: calc(var(--nav-height) + var(--tabs-height) + var(--safe-top) + 2rem);
 }
 
 /* ===== Welcome Section (index) ===== */
@@ -611,8 +615,12 @@ footer p {
 
   /* Reduce top padding (no tabs bar below the nav on mobile) */
   .page-section {
-    padding-top: calc(var(--nav-height) + var(--safe-top) + 1.5rem);
+    padding-top: 2rem;
     padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 2rem);
+  }
+
+  .page-main > .page-section:first-child {
+    padding-top: calc(var(--nav-height) + var(--safe-top) + 1.5rem);
   }
 
   .welcome-section {
