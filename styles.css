@@ -715,6 +715,11 @@ footer p {
   /* Reduce top padding (no tabs bar below the nav on mobile) */
   .page-section {
     padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Only the last section needs clearance for the fixed bottom nav */
+  .page-main > .page-section:last-child {
     padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 2rem);
   }
 
@@ -728,10 +733,12 @@ footer p {
     min-height: calc(100dvh - var(--nav-height) - var(--bottom-nav-height) - var(--safe-top) - var(--safe-bottom));
   }
 
+  /* welcome-section is always the only/last section on index, so it keeps its full bottom padding */
+
   .hero-cover {
-    min-height: calc(100dvh - var(--nav-height) - var(--bottom-nav-height) - var(--safe-top) - var(--safe-bottom));
-    padding-top: calc(var(--nav-height) + var(--safe-top));
-    padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
+    min-height: 0;
+    padding-top: calc(var(--nav-height) + var(--safe-top) + 1.5rem);
+    padding-bottom: 2rem;
   }
 
   /* Slide install banner above the bottom nav */
