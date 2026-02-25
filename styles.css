@@ -337,7 +337,7 @@ nav:first-of-type {
 
 /* ===== Article Block ===== */
 .article-block {
-  max-width: 720px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: left;
   min-height: auto;
@@ -375,7 +375,7 @@ nav:first-of-type {
 
 /* ===== Metrics Cards Grid ===== */
 .metrics-section {
-  max-width: 720px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: left;
   min-height: auto;
@@ -1137,6 +1137,45 @@ body.menu-open::before {
   font-weight: 700;
   border-radius: 4px;
   text-decoration: none;
+}
+
+/* ===== IPP Pick Cards ===== */
+.ipp-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ipp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+.ipp-card--nuclear::before { background: #a78bfa; }
+.ipp-card--nuclear .stock-ticker { color: #a78bfa; }
+
+.ipp-card--gas::before { background: #fb923c; }
+.ipp-card--gas .stock-ticker { color: #fb923c; }
+
+.ipp-card--mixed::before { background: linear-gradient(90deg, #a78bfa 0%, #fb923c 100%); }
+.ipp-card--mixed .stock-ticker { color: #34d399; }
+
+.ipp-card__badge-row {
+  margin-bottom: 0.35rem;
+}
+
+.badge-gas {
+  background: #fb923c;
+  color: #291502;
+}
+
+.badge-mixed {
+  background: linear-gradient(90deg, #a78bfa, #fb923c);
+  color: #fff;
 }
 
 /* ===== Capex Chain ===== */
