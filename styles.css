@@ -1138,3 +1138,37 @@ body.menu-open::before {
   border-radius: 4px;
   text-decoration: none;
 }
+
+/* ===== Capex Chain ===== */
+.capex-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.capex-chain__card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.capex-chain__arrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #34d399;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.text-highlight {
+  font-weight: 700;
+  color: var(--accent);
+}
