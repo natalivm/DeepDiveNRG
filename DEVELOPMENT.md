@@ -58,6 +58,25 @@ npm run lint
 npm run format
 ```
 
+### ESLint Rules
+
+| Rule | Level | Purpose |
+|------|-------|---------|
+| `no-unused-vars` | warn | Catch dead code |
+| `semi` | error | Require semicolons |
+| `quotes` | error | Enforce single quotes |
+| `prefer-const` | error | Immutable bindings where possible |
+| `eqeqeq` | error | Strict equality checks |
+| `no-var` | error | Disallow legacy `var` declarations |
+
+### Code Patterns
+
+**JSDoc** — all exported functions and constants in `app.js`, `config.js`, and `sw.js` carry JSDoc comments for IDE support.
+
+**Error handling** — async operations (dynamic `import()`, Service Worker cache operations) use `.catch()` with `console.error` logging.
+
+**No magic values** — SVG icon paths are centralised in the `NAV_ICONS` constant; site metadata lives in `siteConfig`.
+
 ## Deployment
 
 The site is deployed automatically to **GitHub Pages** from the `main` branch root directory.
@@ -72,5 +91,6 @@ The site is deployed automatically to **GitHub Pages** from the `main` branch ro
 ## Adding a New Page
 
 1. Add an entry to `siteConfig.pages` in **`config.js`**
-2. Create the corresponding HTML file (copy `page3.html` as a template)
-3. The bottom navigation is generated automatically from `config.js`
+2. Add a matching SVG path array to `NAV_ICONS` in **`app.js`** (keyed by the same `id`)
+3. Create the corresponding HTML file (copy `page3.html` as a template)
+4. The bottom navigation and active-link highlighting are generated automatically
