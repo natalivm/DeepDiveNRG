@@ -1,19 +1,23 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('icons');
-  eleventyConfig.addPassthroughCopy('manifest.json');
-  eleventyConfig.addPassthroughCopy('styles.css');
-  eleventyConfig.addPassthroughCopy('app.js');
-  eleventyConfig.addPassthroughCopy('config.js');
-  eleventyConfig.addPassthroughCopy('sw.js');
-  eleventyConfig.addPassthroughCopy('_config.yml');
-  eleventyConfig.addPassthroughCopy('.nojekyll');
+  // Passthrough copy for static assets
+  eleventyConfig.addPassthroughCopy({ 'src/assets/icons': 'icons' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/manifest.json': 'manifest.json' });
+  eleventyConfig.addPassthroughCopy({ 'src/js/sw.js': 'sw.js' });
+  eleventyConfig.addPassthroughCopy({ 'src/js/app.js': 'js/app.js' });
+  eleventyConfig.addPassthroughCopy({ 'src/js/config.js': 'js/config.js' });
+  eleventyConfig.addPassthroughCopy({ 'src/css': 'css' });
+  eleventyConfig.addPassthroughCopy({ '_config.yml': '_config.yml' });
+  eleventyConfig.addPassthroughCopy({ '.nojekyll': '.nojekyll' });
 
   return {
     dir: {
-      input: '.',
+      input: 'src',
       output: '_site',
-      includes: '_includes'
+      includes: '_includes',
+      data: '_data',
     },
-    htmlTemplateEngine: false
+    templateFormats: ['njk', 'html', 'md'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk'
   };
 };

@@ -1,0 +1,13 @@
+<nav>
+  <a href="index.html" class="nav-logo">DeepDive<span>NRG</span></a>
+  <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    {% for page in site.pages %}
+      {% if page.id != 'index' %}
+        <li><a href="{{ page.href }}">{{ page.label }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
