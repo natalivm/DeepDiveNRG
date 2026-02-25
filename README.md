@@ -27,7 +27,10 @@ DeepDiveNRG/
 ├── page3.html      # Tab 3 sub-page with back button
 ├── styles.css      # Dark theme stylesheet (responsive, CSS custom properties)
 ├── _config.yml     # GitHub Pages configuration
-├── .nojekyll       # Skips Jekyll processing (plain HTML/CSS site)
+├── .nojekyll       # Skips Jekyll processing (plain HTML/CSS/JS site)
+├── .eleventy.js    # Eleventy build configuration (optional local dev)
+├── package.json    # Node.js dev dependencies and scripts
+├── DEVELOPMENT.md  # Developer setup guide
 └── README.md       # This file
 ```
 
@@ -44,3 +47,5 @@ DeepDiveNRG/
 
 - The `.nojekyll` file ensures GitHub Pages serves the static files directly without Jekyll processing.
 - All asset paths are relative, so the site works correctly under the `/DeepDiveNRG/` subdirectory.
+- Site configuration (pages list, titles, colours) is centralised in `config.js` — the bottom navigation is generated from it automatically.
+- See [DEVELOPMENT.md](DEVELOPMENT.md) for local development setup instructions.

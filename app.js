@@ -7,56 +7,51 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// ===== Bottom Navigation =====
-function createBottomNav() {
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
+// ===== Page Detection Helpers =====
+/**
+ * Returns the current page filename derived from the URL pathname.
+ *
+ * @returns {string} e.g. 'page1.html', or 'index.html' when at the root.
+ */
+function getCurrentPage() {
+  return location.pathname.split('/').pop() || 'index.html';
+}
 
-  const items = [
-    {
-      href: 'index.html',
-      page: 'index.html',
-      label: 'Home',
-      // House icon
-      paths: ['M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', 'M9 22V12h6v10']
-    },
-    {
-      href: 'page1.html',
-      page: 'page1.html',
-      label: 'Tab 1',
-      // Layers icon
-      paths: ['M12 2L2 7l10 5 10-5-10-5', 'M2 17l10 5 10-5', 'M2 12l10 5 10-5']
-    },
-    {
-      href: 'page2.html',
-      page: 'page2.html',
-      label: 'Tab 2',
-      // Bar chart icon
-      paths: ['M18 20V10', 'M12 20V4', 'M6 20v-6']
-    },
-    {
-      href: 'page3.html',
-      page: 'page3.html',
-      label: 'Tab 3',
-      // Activity / pulse icon
-      paths: ['M22 12h-4l-3 9L9 3l-3 9H2']
-    }
-  ];
+/**
+ * Returns true when `href` matches the currently active page.
+ *
+ * @param {string} href        - Relative href of the link being tested.
+ * @param {string} currentPage - Value returned by {@link getCurrentPage}.
+ * @returns {boolean}
+ */
+function isPageActive(href, currentPage) {
+  return href === currentPage || (currentPage === '' && href === 'index.html');
+}
+
+// ===== Bottom Navigation =====
+/**
+ * Builds and appends a mobile bottom-navigation bar to the page.
+ * Icon paths are read from each page's `icon` property in siteConfig.
+ *
+ * @param {Array<{id: string, href: string, label: string, icon: string[]}>} pages - Page entries from siteConfig.
+ */
+function createBottomNav(pages) {
+  const currentPage = getCurrentPage();
 
   const nav = document.createElement('nav');
   nav.className = 'bottom-nav';
   nav.setAttribute('aria-label', 'Bottom navigation');
 
-  items.forEach(({ href, page, label, paths }) => {
-    const isActive = currentPage === page || (currentPage === '' && page === 'index.html');
+  pages.forEach(({ href, label, icon = [] }) => {
     const a = document.createElement('a');
     a.href = href;
-    a.className = 'bottom-nav-item' + (isActive ? ' active' : '');
+    a.className = 'bottom-nav-item' + (isPageActive(href, currentPage) ? ' active' : '');
     const svgNS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(svgNS, 'svg');
     svg.setAttribute('class', 'bottom-nav-icon');
     svg.setAttribute('viewBox', '0 0 24 24');
     svg.setAttribute('aria-hidden', 'true');
-    paths.forEach((d) => {
+    icon.forEach((d) => {
       const path = document.createElementNS(svgNS, 'path');
       path.setAttribute('d', d);
       svg.appendChild(path);
@@ -73,47 +68,102 @@ function createBottomNav() {
 }
 
 // ===== Hamburger Menu (desktop) =====
+/**
+ * Toggles the hamburger menu open/closed and updates ARIA attributes.
+ *
+ * @param {HTMLElement} toggle - The hamburger button element.
+ * @param {HTMLElement} menu - The nav-links list element.
+ */
+function initHamburgerMenu(toggle, menu) {
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('is-open');
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+  });
+
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('is-open');
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    });
+  });
+}
+
+/**
+ * Highlights the active link in the desktop nav and tabs bar
+ * based on the current page URL.
+ *
+ * @param {string} currentPage - The current page filename (e.g. 'page1.html').
+ */
+function highlightActiveLinks(currentPage) {
+  document.querySelectorAll('.nav-links a').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#')) return;
+    a.classList.toggle('active', isPageActive(href, currentPage));
+  });
+
+  document.querySelectorAll('.tab-link').forEach((tab) => {
+    const href = tab.getAttribute('href');
+    tab.classList.toggle('tab-active', isPageActive(href, currentPage));
+  });
+}
+
+/**
+ * Shows the PWA install banner and wires up install / dismiss buttons.
+ *
+ * @param {BeforeInstallPromptEvent} promptEvent - The deferred install prompt.
+ */
+function showInstallBanner(promptEvent) {
+  const banner = document.querySelector('.install-banner');
+  if (!banner) return;
+
+  let deferredPrompt = promptEvent;
+  banner.classList.add('visible');
+
+  const installBtn = banner.querySelector('.install-btn');
+  const dismissBtn = banner.querySelector('.install-dismiss');
+
+  if (installBtn) {
+    installBtn.addEventListener('click', () => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => {
+        deferredPrompt = null;
+        banner.classList.remove('visible');
+      });
+    });
+  }
+
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      banner.classList.remove('visible');
+    });
+  }
+}
+
+// ===== DOMContentLoaded initialisation =====
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-hamburger');
   const menu = document.querySelector('.nav-links');
 
   if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      const open = toggle.classList.toggle('is-open');
-      menu.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', open);
-      document.body.classList.toggle('menu-open', open);
-    });
-
-    menu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('is-open');
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-      });
-    });
+    initHamburgerMenu(toggle, menu);
   }
 
   // ===== Page Transition =====
   document.body.classList.add('page-ready');
 
   // ===== Active link highlight (desktop nav + tabs bar) =====
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
-
-  document.querySelectorAll('.nav-links a').forEach((a) => {
-    const href = a.getAttribute('href');
-    if (!href || href.startsWith('#')) return;
-    a.classList.toggle('active', href === currentPage || (currentPage === '' && href === 'index.html'));
-  });
-
-  document.querySelectorAll('.tab-link').forEach((tab) => {
-    const href = tab.getAttribute('href');
-    tab.classList.toggle('tab-active', href === currentPage);
-  });
+  highlightActiveLinks(getCurrentPage());
 
   // ===== Inject bottom nav =====
-  createBottomNav();
+  import('./config.js').then(({ siteConfig }) => {
+    createBottomNav(siteConfig.pages);
+  }).catch((err) => {
+    console.error('Failed to load site config:', err);
+  });
 
   // ===== iOS standalone: handle internal links =====
   if (window.navigator.standalone) {
@@ -127,24 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== Install prompt =====
-  let deferredPrompt;
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
-    deferredPrompt = e;
-
-    const banner = document.querySelector('.install-banner');
-    if (banner) {
-      banner.classList.add('visible');
-      banner.querySelector('.install-btn').addEventListener('click', () => {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then(() => {
-          deferredPrompt = null;
-          banner.classList.remove('visible');
-        });
-      });
-      banner.querySelector('.install-dismiss').addEventListener('click', () => {
-        banner.classList.remove('visible');
-      });
-    }
+    showInstallBanner(e);
   });
 });
