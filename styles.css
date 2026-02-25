@@ -53,6 +53,18 @@
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --bottom-nav-height: 60px;
+  /* ===== Badge colour palette ===== */
+  --badge-ipp-bg: #34d399;
+  --badge-ipp-text: #0d2b1a;
+  --badge-nuclear-bg: #a78bfa;
+  --badge-nuclear-text: #1a0f2e;
+  --badge-grid-bg: #38bdf8;
+  --badge-grid-text: #0c1929;
+  --badge-uranium-bg: #fbbf24;
+  --badge-uranium-text: #291e02;
+  --badge-copper-bg: #fb923c;
+  --badge-copper-text: #291502;
+  --color-negative: #f87171;
 }
 
 html {
@@ -294,8 +306,8 @@ nav:first-of-type {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #0d2b1a;
-  background-color: #34d399;
+  color: var(--badge-ipp-text);
+  background-color: var(--badge-ipp-bg);
 }
 
 .hero-title {
@@ -445,21 +457,6 @@ nav:first-of-type {
   margin-top: 1.5rem;
 }
 
-.stock-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  transition: border-color 0.2s ease;
-}
-
-.stock-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
 .stock-badge {
   display: inline-block;
   width: fit-content;
@@ -472,50 +469,28 @@ nav:first-of-type {
 }
 
 .badge-ipp {
-  background: #34d399;
-  color: #0d2b1a;
+  background: var(--badge-ipp-bg);
+  color: var(--badge-ipp-text);
 }
 
 .badge-nuclear {
-  background: #a78bfa;
-  color: #1a0f2e;
+  background: var(--badge-nuclear-bg);
+  color: var(--badge-nuclear-text);
 }
 
 .badge-grid {
-  background: #38bdf8;
-  color: #0c1929;
+  background: var(--badge-grid-bg);
+  color: var(--badge-grid-text);
 }
 
 .badge-uranium {
-  background: #fbbf24;
-  color: #291e02;
+  background: var(--badge-uranium-bg);
+  color: var(--badge-uranium-text);
 }
 
 .badge-copper {
-  background: #fb923c;
-  color: #291502;
-}
-
-.stock-ticker {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.stock-name {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.stock-desc {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  opacity: 0.7;
-  margin: 0;
+  background: var(--badge-copper-bg);
+  color: var(--badge-copper-text);
 }
 
 /* ===== Section Titles ===== */
@@ -963,7 +938,7 @@ body.menu-open::before {
 }
 
 .stock-table-val.negative {
-  color: #f87171;
+  color: var(--color-negative);
 }
 
 .stock-table tr:last-child td {

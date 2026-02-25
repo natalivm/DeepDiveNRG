@@ -2,12 +2,12 @@
  * @file sw.js — Service Worker for DeepDiveNRG PWA.
  *
  * Strategy: network-first with cache fallback.
- * A new cache version is created on each deploy (date-stamped).
+ * Bump CACHE_NAME when deploying breaking asset changes to invalidate old caches.
  * Old caches are purged during the activate event.
  */
 
-/** @type {string} Unique cache key for this build. */
-const CACHE_NAME = `deepdivenrg-v3-${new Date().toISOString().slice(0, 10)}`;
+/** @type {string} Unique cache key for this build. Increment the version suffix on each deploy. */
+const CACHE_NAME = 'deepdivenrg-v4';
 
 /**
  * Static assets to pre-cache during service-worker installation.
