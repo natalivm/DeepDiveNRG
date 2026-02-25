@@ -297,6 +297,7 @@ nav:first-of-type {
   min-height: calc(100vh - var(--nav-height) - var(--tabs-height) - 80px);
   min-height: calc(100dvh - var(--nav-height) - var(--tabs-height) - 80px);
   gap: 1.25rem;
+  padding-top: calc(var(--nav-height) + var(--tabs-height) + var(--safe-top) + 3rem);
 }
 
 .hero-badge {
@@ -811,6 +812,123 @@ body.menu-open::before {
   .btn-back:active {
     border-color: var(--accent);
     color: var(--accent);
+  }
+}
+
+/* ===== Signal Cards Grid ===== */
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.signal-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.3rem 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.signal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 14px 14px 0 0;
+}
+
+.signal-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Card color variants — top accent bar & value color */
+.signal-card--green::before { background: #34d399; }
+.signal-card--green .signal-card__value { color: #34d399; }
+
+.signal-card--cyan::before { background: var(--accent); }
+.signal-card--cyan .signal-card__value { color: var(--accent); }
+
+.signal-card--blue::before { background: #38bdf8; }
+.signal-card--blue .signal-card__value { color: #38bdf8; }
+
+.signal-card--purple::before { background: #a78bfa; }
+.signal-card--purple .signal-card__value { color: #a78bfa; }
+
+.signal-card--amber::before { background: #fbbf24; }
+.signal-card--amber .signal-card__value { color: #fbbf24; }
+
+.signal-card--orange::before { background: #fb923c; }
+.signal-card--orange .signal-card__value { color: #fb923c; }
+
+.signal-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.signal-card__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.signal-card__period {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.signal-card__value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.signal-card__value {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.signal-card__delta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.signal-card__delta.positive {
+  color: #34d399;
+}
+
+.signal-card__delta.negative {
+  color: #f87171;
+}
+
+.signal-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .signal-grid {
+    grid-template-columns: 1fr;
   }
 }
 
