@@ -98,6 +98,70 @@ a:hover {
   color: var(--text-primary);
 }
 
+/* ---------- Tabs Bar ---------- */
+.tabs-bar {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.tabs-container {
+  display: flex;
+  gap: 0.25rem;
+  padding-block: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-link {
+  display: inline-block;
+  padding: 0.55rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.tab-link:hover {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.tab-link.tab-active {
+  background-color: var(--accent);
+  color: #000;
+}
+
+.tab-link.tab-active:hover {
+  background-color: var(--accent-dark);
+  color: #000;
+}
+
+/* ---------- Back Button ---------- */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition), color var(--transition);
+  margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ---------- Hero ---------- */
 .hero {
   min-height: 80vh;
