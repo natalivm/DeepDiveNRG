@@ -1,0 +1,78 @@
+/* ===== Section Titles ===== */
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+/* ===== Back Button ===== */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  background: var(--bg-card);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  margin-bottom: 1.75rem;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px;
+}
+
+.btn-back:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 212, 255, 0.06);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  padding: 0.72em 1.65em;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: linear-gradient(130deg, var(--accent), var(--accent-secondary));
+  color: #fff;
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.22);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 32px rgba(0, 212, 255, 0.38);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+

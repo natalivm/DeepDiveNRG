@@ -1,0 +1,125 @@
+/* ===== Responsive — Tablet & Mobile ===== */
+@media (max-width: 768px) {
+  /* Bottom nav handles navigation on mobile */
+  .nav-hamburger {
+    display: none;
+  }
+
+  .tabs-bar {
+    display: none;
+  }
+
+  .bottom-nav {
+    display: flex;
+  }
+
+  .page-section {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page-main > .page-section:last-child {
+    padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 2rem);
+  }
+
+  .page-main > .page-section:first-child {
+    padding-top: calc(var(--nav-height) + var(--safe-top) + 2rem);
+  }
+
+  .welcome-section {
+    padding-top: calc(var(--nav-height) + var(--safe-top));
+    padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
+    min-height: calc(100dvh - var(--nav-height) - var(--bottom-nav-height) - var(--safe-top) - var(--safe-bottom));
+  }
+
+  .hero-cover {
+    min-height: 0;
+    padding-top: calc(var(--nav-height) + var(--safe-top) + 2rem);
+    padding-bottom: 2.5rem;
+    gap: 1rem;
+  }
+
+  .install-banner.visible {
+    bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom) + 1.5rem);
+    margin-top: 0;
+  }
+}
+
+/* ===== Responsive — Small phones ===== */
+@media (max-width: 480px) {
+  :root {
+    --h-pad: max(16px, 4%);
+  }
+
+  .tabs-container {
+    padding-left: max(16px, 4%);
+    padding-right: max(16px, 4%);
+  }
+}
+
+/* ===== Standalone (installed PWA) tweaks ===== */
+@media (display-mode: standalone) {
+  nav:first-of-type {
+    padding-top: var(--safe-top);
+  }
+}
+
+/* ===== Overlay when menu is open ===== */
+body.menu-open::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 102;
+  backdrop-filter: blur(4px);
+}
+
+/* ===== Touch & interaction improvements ===== */
+@media (hover: none) and (pointer: coarse) {
+  .bottom-nav-item:active {
+    color: var(--accent);
+  }
+
+  .bottom-nav-item:active .bottom-nav-icon {
+    transform: scale(0.88);
+  }
+
+  .tab-link:hover {
+    background-color: transparent;
+    color: var(--text-tertiary);
+  }
+
+  .tab-link.tab-active:hover {
+    background-color: rgba(0, 212, 255, 0.12);
+    color: var(--accent);
+  }
+
+  .tab-link:active {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+  }
+
+  .tab-link.tab-active:active {
+    background-color: rgba(0, 212, 255, 0.18);
+    color: var(--accent);
+  }
+
+  .btn-back:hover {
+    border-color: var(--border);
+    color: var(--text-secondary);
+    background: var(--bg-card);
+  }
+
+  .btn-back:active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0, 212, 255, 0.06);
+  }
+}
+

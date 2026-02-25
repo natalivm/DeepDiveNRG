@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "lint": "eslint app.js config.js",
+    "lint": "eslint src/js/app.js src/js/config.js",
     "format": "prettier --write ."
   },
   "devDependencies": {
