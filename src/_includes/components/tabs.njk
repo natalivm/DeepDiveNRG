@@ -1,9 +1,0 @@
-<nav class="tabs-bar" aria-label="Page tabs">
-  <div class="tabs-container">
-    {% for page in site.pages %}
-      {% if page.id != 'index' %}
-        <a href="{{ page.href }}" class="tab-link{% if page.id == activeTab %} tab-active{% endif %}">{{ page.label }}</a>
-      {% endif %}
-    {% endfor %}
-  </div>
-</nav>

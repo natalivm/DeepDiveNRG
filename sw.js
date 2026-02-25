@@ -7,25 +7,18 @@
  */
 
 /** @type {string} Unique cache key for this build. Increment the version suffix on each deploy. */
-const CACHE_NAME = 'deepdivenrg-v5';
+const CACHE_NAME = 'deepdivenrg-v6';
 
 /**
- * Static assets to pre-cache during service-worker installation.
+ * Critical assets to pre-cache during service-worker installation.
+ * Non-critical pages and scripts are cached on first fetch (network-first strategy).
  * @type {string[]}
  */
 const ASSETS = [
-  './',
-  './index.html',
-  './page1.html',
-  './page2.html',
-  './page3.html',
-  './styles.css',
-  './app.js',
   './manifest.json',
   './icons/icon-192.svg',
   './icons/icon-512.svg',
   './icons/icon-maskable.svg',
-  './config.js'
 ];
 
 // ===== Install — cache shell assets =====

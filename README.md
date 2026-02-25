@@ -8,30 +8,36 @@ Visit the live site at: [https://natalivm.github.io/DeepDiveNRG/](https://natali
 
 ## GitHub Pages Deployment
 
-This site is deployed via GitHub Pages from the `main` branch root directory.
+Deployment is automated via GitHub Actions. On every push to `main`, the workflow builds the site to `_site/` and deploys it to GitHub Pages.
 
 ### Setup
 
 1. Go to **Settings → Pages** in the repository.
-2. Under **Source**, select **Deploy from a branch**.
-3. Choose the `main` branch and `/ (root)` folder, then click **Save**.
+2. Under **Source**, select **GitHub Actions**.
+3. Push to `main` — the workflow handles the rest.
 4. The site will be available at `https://natalivm.github.io/DeepDiveNRG/` within a few minutes.
 
 ### Project Structure
 
 ```
 DeepDiveNRG/
-├── index.html      # Main page with hero, about, services, contact sections + 3 navigation tabs
-├── page1.html      # Tab 1 sub-page with back button
-├── page2.html      # Tab 2 sub-page with back button
-├── page3.html      # Tab 3 sub-page with back button
-├── styles.css      # Dark theme stylesheet (responsive, CSS custom properties)
-├── _config.yml     # GitHub Pages configuration
-├── .nojekyll       # Skips Jekyll processing (plain HTML/CSS/JS site)
-├── .eleventy.js    # Eleventy build configuration (optional local dev)
-├── package.json    # Node.js dev dependencies and scripts
-├── DEVELOPMENT.md  # Developer setup guide
-└── README.md       # This file
+├── index.html          # Main page + 3 navigation tabs
+├── page1.html          # Tab 1 sub-page
+├── page2.html          # Tab 2 sub-page
+├── page3.html          # Tab 3 sub-page
+├── styles.css          # Dark theme stylesheet (responsive, CSS custom properties)
+├── app.js              # Main JavaScript (nav, SW registration, interactions)
+├── config.js           # Centralized site configuration (pages, colors, metadata)
+├── sw.js               # Service Worker (network-first, offline caching)
+├── manifest.json       # PWA manifest
+├── icons/              # SVG icons for PWA
+├── scripts/build.js    # Build script — copies files to _site/
+├── .github/workflows/  # GitHub Actions deployment workflow
+├── _config.yml         # GitHub Pages configuration
+├── .nojekyll           # Skips Jekyll processing (plain HTML/CSS/JS site)
+├── package.json        # Node.js dev dependencies and scripts
+├── DEVELOPMENT.md      # Developer setup guide
+└── README.md           # This file
 ```
 
 ### Features
