@@ -807,6 +807,150 @@ body.menu-open::before {
   }
 }
 
+/* ===== Rotation Callout (blockquote) ===== */
+.rotation-callout {
+  margin: 2rem 0 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(0, 212, 255, 0.04);
+  border-radius: 0 10px 10px 0;
+}
+
+.callout-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.rotation-callout p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ===== Stocks Section ===== */
+.stocks-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: auto;
+}
+
+.stocks-level-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.stocks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* ===== Stock Card ===== */
+.stock-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.2s ease;
+}
+
+.stock-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.stock-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stock-ticker {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.stock-name {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stock-valuation {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.stock-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+/* ===== Stock Table ===== */
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.stock-table td {
+  padding: 0.45rem 0;
+  font-size: 0.78rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.stock-table td:first-child {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stock-table-val {
+  text-align: right;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stock-table-val.negative {
+  color: #f87171;
+}
+
+.stock-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== Responsive — Stock Cards ===== */
+@media (max-width: 900px) {
+  .stocks-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .stocks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Selection color ===== */
 ::selection {
   background: rgba(0, 212, 255, 0.3);
