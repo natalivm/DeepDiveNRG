@@ -237,6 +237,90 @@ nav:first-of-type {
   color: var(--text-secondary);
 }
 
+/* ===== Hero Cover (Tab 1) ===== */
+.hero-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: calc(100vh - var(--nav-height) - var(--tabs-height) - 80px);
+  min-height: calc(100dvh - var(--nav-height) - var(--tabs-height) - 80px);
+  gap: 1.25rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0d2b1a;
+  background-color: #34d399;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  max-width: 720px;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.hero-attribution {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-top: 0.5rem;
+}
+
+/* ===== Article Block ===== */
+.article-block {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+  min-height: auto;
+}
+
+.article-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.5;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.article-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.article-body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
 /* ===== Section Titles ===== */
 .section-title {
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
@@ -464,6 +548,12 @@ footer p {
     padding-top: calc(var(--nav-height) + var(--safe-top));
     padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
     min-height: calc(100dvh - var(--nav-height) - var(--bottom-nav-height) - var(--safe-top) - var(--safe-bottom));
+  }
+
+  .hero-cover {
+    min-height: calc(100dvh - var(--nav-height) - var(--bottom-nav-height) - var(--safe-top) - var(--safe-bottom));
+    padding-top: calc(var(--nav-height) + var(--safe-top));
+    padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
   }
 
   /* Slide install banner above the bottom nav */
