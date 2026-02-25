@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
   <title>Tab 2 – DeepDiveNRG</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -10,10 +16,13 @@
   <!-- ===== Navigation ===== -->
   <nav>
     <a href="index.html" class="nav-logo">DeepDive<span>NRG</span></a>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="page1.html">Tab 1</a></li>
+      <li><a href="page2.html">Tab 2</a></li>
+      <li><a href="page3.html">Tab 3</a></li>
     </ul>
   </nav>
 
@@ -26,7 +35,8 @@
     </div>
   </nav>
 
-  <main>
+  <!-- ===== Main Content ===== -->
+  <main class="page-main">
     <section class="page-section">
       <a href="index.html" class="btn-back">&larr; Back</a>
       <h2 class="section-title">Tab 2</h2>
@@ -37,11 +47,8 @@
   <footer>
     <a href="index.html" class="footer-logo">DeepDive<span>NRG</span></a>
     <p>&copy; 2026 DeepDiveNRG. All rights reserved.</p>
-    <ul class="footer-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

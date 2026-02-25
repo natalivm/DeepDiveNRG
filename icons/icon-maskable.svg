@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Maskable icons need extra padding (safe zone is inner 80%) -->
+  <rect width="512" height="512" fill="#0d0d0d"/>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#7b2fff"/>
+    </linearGradient>
+  </defs>
+  <path d="M256 102 C180 102, 128 160, 128 210 C128 250, 160 282, 200 292 L186 380 L256 310 L240 318 C280 310, 318 278, 342 240 C366 202, 362 154, 320 130 C304 120, 280 102, 256 102Z" fill="url(#g)" opacity="0.9"/>
+  <text x="256" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="60" font-weight="800" fill="#ffffff" letter-spacing="-1">NRG</text>
+</svg>
