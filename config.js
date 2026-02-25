@@ -36,7 +36,7 @@ export const siteConfig = {
       icon: ['M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', 'M9 22V12h6v10']
     },
     {
-      id: 'page1', title: 'Інвестиційний аналіз', href: 'page1.html', label: 'Tab 1', lang: 'uk',
+      id: 'page1', title: 'Інвестиційний аналіз', href: 'page1.html', label: 'Slow Reading', lang: 'uk',
       icon: ['M12 2L2 7l10 5 10-5-10-5', 'M2 17l10 5 10-5', 'M2 12l10 5 10-5']
     },
     {
