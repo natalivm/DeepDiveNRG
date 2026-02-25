@@ -25,7 +25,7 @@ DeepDiveNRG/
 ├── page1.html      # Tab 1 sub-page with back button
 ├── page2.html      # Tab 2 sub-page with back button
 ├── page3.html      # Tab 3 sub-page with back button
-├── style.css       # Dark theme stylesheet (responsive, CSS custom properties)
+├── styles.css      # Dark theme stylesheet (responsive, CSS custom properties)
 ├── _config.yml     # GitHub Pages configuration
 ├── .nojekyll       # Skips Jekyll processing (plain HTML/CSS site)
 └── README.md       # This file

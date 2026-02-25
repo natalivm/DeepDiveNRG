@@ -1,7 +1,9 @@
 // ===== Service Worker Registration =====
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+    navigator.serviceWorker.register('./sw.js').catch((err) => {
+      console.warn('Service Worker registration failed:', err);
+    });
   });
 }
 
@@ -49,10 +51,21 @@ function createBottomNav() {
     const a = document.createElement('a');
     a.href = href;
     a.className = 'bottom-nav-item' + (isActive ? ' active' : '');
-    const svgPaths = paths.map((d) => `<path d="${d}"/>`).join('');
-    a.innerHTML =
-      `<svg class="bottom-nav-icon" viewBox="0 0 24 24" aria-hidden="true">${svgPaths}</svg>` +
-      `<span class="bottom-nav-label">${label}</span>`;
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('class', 'bottom-nav-icon');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    paths.forEach((d) => {
+      const path = document.createElementNS(svgNS, 'path');
+      path.setAttribute('d', d);
+      svg.appendChild(path);
+    });
+    const span = document.createElement('span');
+    span.className = 'bottom-nav-label';
+    span.textContent = label;
+    a.appendChild(svg);
+    a.appendChild(span);
     nav.appendChild(a);
   });
 
