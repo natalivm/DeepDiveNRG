@@ -1,0 +1,16 @@
+{
+  "name": "deepdivenrg",
+  "version": "1.0.0",
+  "description": "DeepDiveNRG - Energy solutions website",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "lint": "eslint app.js config.js",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  }
+}

@@ -7,46 +7,24 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// ===== Bottom Navigation =====
-function createBottomNav() {
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
+// ===== Navigation Icon Paths (keyed by page id) =====
+const NAV_ICONS = {
+  index: ['M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', 'M9 22V12h6v10'],
+  page1: ['M12 2L2 7l10 5 10-5-10-5', 'M2 17l10 5 10-5', 'M2 12l10 5 10-5'],
+  page2: ['M18 20V10', 'M12 20V4', 'M6 20v-6'],
+  page3: ['M22 12h-4l-3 9L9 3l-3 9H2']
+};
 
-  const items = [
-    {
-      href: 'index.html',
-      page: 'index.html',
-      label: 'Home',
-      // House icon
-      paths: ['M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', 'M9 22V12h6v10']
-    },
-    {
-      href: 'page1.html',
-      page: 'page1.html',
-      label: 'Tab 1',
-      // Layers icon
-      paths: ['M12 2L2 7l10 5 10-5-10-5', 'M2 17l10 5 10-5', 'M2 12l10 5 10-5']
-    },
-    {
-      href: 'page2.html',
-      page: 'page2.html',
-      label: 'Tab 2',
-      // Bar chart icon
-      paths: ['M18 20V10', 'M12 20V4', 'M6 20v-6']
-    },
-    {
-      href: 'page3.html',
-      page: 'page3.html',
-      label: 'Tab 3',
-      // Activity / pulse icon
-      paths: ['M22 12h-4l-3 9L9 3l-3 9H2']
-    }
-  ];
+// ===== Bottom Navigation =====
+function createBottomNav(pages) {
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
 
   const nav = document.createElement('nav');
   nav.className = 'bottom-nav';
   nav.setAttribute('aria-label', 'Bottom navigation');
 
-  items.forEach(({ href, page, label, paths }) => {
+  pages.forEach(({ id, href, label }) => {
+    const page = href;
     const isActive = currentPage === page || (currentPage === '' && page === 'index.html');
     const a = document.createElement('a');
     a.href = href;
@@ -113,7 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== Inject bottom nav =====
-  createBottomNav();
+  import('./config.js').then(({ siteConfig }) => {
+    createBottomNav(siteConfig.pages);
+  });
 
   // ===== iOS standalone: handle internal links =====
   if (window.navigator.standalone) {
