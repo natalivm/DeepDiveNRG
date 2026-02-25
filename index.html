@@ -3,98 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DeepDiveNRG — Exploring the depths of energy innovation." />
   <title>DeepDiveNRG</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="#" class="logo">DeepDive<span>NRG</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <a href="#hero" class="nav-logo">DeepDive<span>NRG</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Tabs ===== -->
   <nav class="tabs-bar" aria-label="Page tabs">
-    <div class="container tabs-container">
+    <div class="tabs-container">
       <a href="page1.html" class="tab-link">Tab 1</a>
       <a href="page2.html" class="tab-link">Tab 2</a>
       <a href="page3.html" class="tab-link">Tab 3</a>
     </div>
   </nav>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <h1>Power Your Future with <span>DeepDiveNRG</span></h1>
-        <p class="hero-subtitle">Next-generation energy solutions built for a sustainable tomorrow.</p>
+  <!-- ===== Hero ===== -->
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Energy &amp; Innovation</span>
+      <h1 class="hero-title">
+        Dive Deep into<br />
+        <span class="highlight">Next-Gen Energy</span>
+      </h1>
+      <p class="hero-sub">
+        Pioneering sustainable energy solutions through research,
+        technology, and bold exploration of what's possible.
+      </p>
+      <div class="hero-actions">
         <a href="#services" class="btn btn-primary">Explore Services</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">About Us</h2>
-        <p class="section-text">
-          DeepDiveNRG is dedicated to advancing clean energy technology. We research,
-          develop, and deploy innovative solutions that reduce carbon footprints and
-          drive long-term efficiency across industries.
+  <!-- ===== About ===== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Driven by Curiosity.<br />Powered by Innovation.</h2>
+        <p>
+          DeepDiveNRG is a forward-thinking energy research collective
+          dedicated to uncovering transformative solutions in renewable
+          energy, grid efficiency, and emerging technologies.
         </p>
-      </div>
-    </section>
-
-    <section id="services" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Energy Consulting</h3>
-            <p>Strategic guidance to optimise your energy usage and reduce operational costs.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🔬</div>
-            <h3>R&amp;D Solutions</h3>
-            <p>Cutting-edge research and development for next-generation energy systems.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🌱</div>
-            <h3>Sustainability</h3>
-            <p>End-to-end sustainability planning aligned with global net-zero targets.</p>
-          </article>
+        <p>
+          We combine rigorous scientific inquiry with real-world
+          engineering to build a cleaner, more resilient energy future.
+        </p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <strong>50+</strong>
+            <span>Projects</span>
+          </div>
+          <div class="stat-item">
+            <strong>12</strong>
+            <span>Countries</span>
+          </div>
+          <div class="stat-item">
+            <strong>99%</strong>
+            <span>Uptime</span>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-        <form class="contact-form" action="#" method="post">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="icon">🔬</div>
+          <h4>Deep Research</h4>
+          <p>Comprehensive analysis and modelling of energy systems at every scale.</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">⚡</div>
+          <h4>Fast Deployment</h4>
+          <p>Rapid prototyping and field-tested implementation pipelines.</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">🌍</div>
+          <h4>Global Reach</h4>
+          <p>Cross-border partnerships and localised energy strategies.</p>
+        </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 DeepDiveNRG. All rights reserved.</p>
     </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section id="services">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-desc">
+        From strategy to execution, we offer end-to-end expertise
+        across the full energy spectrum.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">☀️</div>
+        <h3>Renewable Integration</h3>
+        <p>
+          Seamlessly connect solar, wind, and hydro assets into
+          existing grids with minimal disruption and maximum efficiency.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔋</div>
+        <h3>Energy Storage</h3>
+        <p>
+          Advanced battery and thermal storage systems designed to
+          balance supply, demand, and grid stability in real time.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Data &amp; Analytics</h3>
+        <p>
+          AI-driven insights from sensor networks and energy flows
+          to optimise performance and predict maintenance needs.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Infrastructure Design</h3>
+        <p>
+          End-to-end engineering for microgrids, substations, and
+          distribution networks built for tomorrow's demands.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Strategic Consulting</h3>
+        <p>
+          Policy guidance, financial modelling, and stakeholder
+          engagement to accelerate your energy transition roadmap.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔒</div>
+        <h3>Grid Security</h3>
+        <p>
+          Cyber-physical security frameworks that protect critical
+          energy infrastructure from evolving threats.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-header" style="margin-bottom:0">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-desc">
+          Have a project in mind? Drop us a line and we'll get back to you within 24 hours.
+        </p>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:center;margin-top:0.5rem">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <a href="#hero" class="footer-logo">DeepDive<span>NRG</span></a>
+    <p>&copy; 2026 DeepDiveNRG. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Message Sent ✓';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      e.target.reset();
+    }
+  </script>
+
 </body>
 </html>
