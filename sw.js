@@ -1,4 +1,4 @@
-const CACHE_NAME = 'deepdivenrg-v3';
+const CACHE_NAME = 'deepdivenrg-' + new Date().toISOString().slice(0, 10);
 const ASSETS = [
   './',
   './index.html',

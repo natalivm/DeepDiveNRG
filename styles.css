@@ -1,3 +1,35 @@
+/* ===== CSS Organization =====
+ * 1.  Reset & Base (variables, box-sizing, body)
+ * 2.  Navbar
+ * 3.  Hamburger Button
+ * 4.  Nav Links (desktop)
+ * 5.  Tabs Bar
+ * 6.  Main Content
+ * 7.  Welcome Section (index)
+ * 8.  Hero Cover (Tab 1)
+ * 9.  Article Block
+ * 10. Metrics Cards Grid
+ * 11. Stock Picks Section
+ * 12. Section Titles
+ * 13. Back Button
+ * 14. Buttons
+ * 15. Install Banner
+ * 16. Footer
+ * 17. Bottom Navigation (mobile app-style)
+ * 18. Responsive — Tablet & Mobile
+ * 19. Responsive — Small phones
+ * 20. Standalone (installed PWA) tweaks
+ * 21. Overlay when menu is open
+ * 22. Touch & interaction improvements
+ * 23. Rotation Callout
+ * 24. Stocks Section
+ * 25. Stock Card
+ * 26. Stock Table
+ * 27. Responsive — Stock Cards
+ * 28. Selection color
+ * 29. Utility Classes
+ * ============================= */
+
 /* ===== Reset & Base ===== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -955,4 +987,49 @@ body.menu-open::before {
 ::selection {
   background: rgba(0, 212, 255, 0.3);
   color: var(--text-primary);
+}
+
+/* ===== Utility Classes ===== */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  clip: auto;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 700;
+  border-radius: 4px;
+  text-decoration: none;
 }
