@@ -10,11 +10,18 @@
 const CACHE_NAME = 'deepdivenrg-v6';
 
 /**
- * Critical assets to pre-cache during service-worker installation.
- * Non-critical pages and scripts are cached on first fetch (network-first strategy).
+ * App-shell assets pre-cached during service-worker installation.
+ * These are the minimum files required to render any page offline.
+ * Content pages (page1–3) are cached automatically on first visit
+ * via the network-first strategy below.
  * @type {string[]}
  */
 const ASSETS = [
+  './',
+  './index.html',
+  './styles.css',
+  './app.js',
+  './config.js',
   './manifest.json',
   './icons/icon-192.svg',
   './icons/icon-512.svg',

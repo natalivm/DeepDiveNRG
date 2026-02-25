@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "npx serve .",
     "build": "node scripts/build.js",
-    "lint": "eslint app.js config.js",
-    "format": "prettier --write ."
+    "preview": "npx serve _site",
+    "lint": "eslint app.js config.js sw.js",
+    "format": "prettier --write .",
+    "ci": "npm run lint && npm run build"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
