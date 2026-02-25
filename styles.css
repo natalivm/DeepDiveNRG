@@ -321,6 +321,77 @@ nav:first-of-type {
   margin-bottom: 0;
 }
 
+/* ===== Metrics Cards Grid ===== */
+.metrics-section {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+  min-height: auto;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.metric-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.metric-value {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.metric-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.metric-delta.positive {
+  color: #34d399;
+}
+
+.metric-delta.negative {
+  color: #f87171;
+}
+
+.metric-delta.neutral {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Section Titles ===== */
 .section-title {
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
