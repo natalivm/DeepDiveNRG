@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="24" fill="#0d0d0d"/>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#7b2fff"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized energy bolt / diving wave -->
+  <path d="M96 28 C60 28, 36 56, 36 80 C36 100, 52 116, 72 120 L64 164 L96 128 L88 132 C108 128, 128 112, 140 92 C152 72, 148 48, 128 36 C120 30, 108 28, 96 28Z" fill="url(#g)" opacity="0.9"/>
+  <text x="96" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff" letter-spacing="-0.5">NRG</text>
+</svg>
