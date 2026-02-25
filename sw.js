@@ -7,7 +7,7 @@
  */
 
 /** @type {string} Unique cache key for this build. Increment the version suffix on each deploy. */
-const CACHE_NAME = 'deepdivenrg-v4';
+const CACHE_NAME = 'deepdivenrg-v5';
 
 /**
  * Static assets to pre-cache during service-worker installation.
@@ -23,7 +23,9 @@ const ASSETS = [
   './app.js',
   './manifest.json',
   './icons/icon-192.svg',
-  './icons/icon-512.svg'
+  './icons/icon-512.svg',
+  './icons/icon-maskable.svg',
+  './config.js'
 ];
 
 // ===== Install — cache shell assets =====
