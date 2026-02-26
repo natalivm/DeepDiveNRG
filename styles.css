@@ -1427,6 +1427,31 @@ body.menu-open::before {
   color: #1a2e05;
 }
 
+/* ===== Utility Pick Cards ===== */
+.utility-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.utility-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+  background: #fbbf24;
+}
+
+.utility-card .stock-ticker { color: #fbbf24; }
+
+.badge-defensive {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
 /* ===== Capex Chain ===== */
 .capex-chain {
   display: flex;
