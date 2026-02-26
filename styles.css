@@ -2533,3 +2533,254 @@ body.menu-open::before {
     gap: 0;
   }
 }
+
+/* ===== Extended Portfolio — Loop Chain ===== */
+.loop-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.loop-chain__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 0.65rem 1rem;
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.loop-chain__card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+}
+
+.loop-chain__title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.loop-chain__tickers {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
+.loop-chain__arrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #34d399;
+  opacity: 0.65;
+  flex-shrink: 0;
+}
+
+.loop-chain__card--energy       { border-color: rgba(248, 113, 113, 0.22); }
+.loop-chain__card--energy       .loop-chain__title { color: #f87171; }
+.loop-chain__card--grid         { border-color: rgba(56, 189, 248, 0.22); }
+.loop-chain__card--grid         .loop-chain__title { color: #38bdf8; }
+.loop-chain__card--builders     { border-color: rgba(52, 211, 153, 0.22); }
+.loop-chain__card--builders     .loop-chain__title { color: #34d399; }
+.loop-chain__card--dc           { border-color: rgba(0, 212, 255, 0.22); }
+.loop-chain__card--dc           .loop-chain__title { color: var(--accent); }
+.loop-chain__card--optical      { border-color: rgba(167, 139, 250, 0.22); }
+.loop-chain__card--optical      .loop-chain__title { color: #a78bfa; }
+.loop-chain__card--memory       { border-color: rgba(251, 191, 36, 0.22); }
+.loop-chain__card--memory       .loop-chain__title { color: #fbbf24; }
+.loop-chain__card--compute      { border-color: rgba(251, 146, 60, 0.22); }
+.loop-chain__card--compute      .loop-chain__title { color: #fb923c; }
+
+.loop-chain__return {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+}
+
+.loop-chain__return-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(52, 211, 153, 0.35), transparent);
+}
+
+.loop-chain__return-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #34d399;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+/* ===== Extended Portfolio — Alloc Additions ===== */
+.alloc-bar__seg--purple { background: #a78bfa; flex: 25; }
+.alloc-bar__seg--orange { background: #fb923c; flex: 15; }
+
+.alloc-tier__name--purple { color: #a78bfa; }
+.alloc-tier__name--orange { color: #fb923c; }
+
+.alloc-chip--purple::before { border-color: rgba(167, 139, 250, 0.18); background: #a78bfa; }
+.alloc-chip--purple:hover   { border-color: rgba(167, 139, 250, 0.22); }
+.alloc-chip--purple .alloc-chip__ticker { color: #a78bfa; }
+
+.alloc-chip--orange::before { border-color: rgba(251, 146, 60, 0.18); background: #fb923c; }
+.alloc-chip--orange:hover   { border-color: rgba(251, 146, 60, 0.22); }
+.alloc-chip--orange .alloc-chip__ticker { color: #fb923c; }
+
+/* ===== Extended Portfolio — Optical & Memory Cards ===== */
+.optical-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.optical-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.optical-card--photonics::before { background: #a78bfa; }
+.optical-card--photonics .stock-ticker { color: #a78bfa; }
+
+.optical-card--networking::before { background: var(--accent); }
+.optical-card--networking .stock-ticker { color: var(--accent); }
+
+.optical-card--chiplet::before { background: linear-gradient(90deg, #a78bfa, var(--accent)); }
+.optical-card--chiplet .stock-ticker { color: #a78bfa; }
+
+.memory-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.memory-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.memory-card--hbm::before { background: #fbbf24; }
+.memory-card--hbm .stock-ticker { color: #fbbf24; }
+
+.memory-card--storage::before { background: #fb923c; }
+.memory-card--storage .stock-ticker { color: #fb923c; }
+
+.badge-photonics {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.badge-optical-net {
+  background: rgba(0, 212, 255, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.badge-hbm {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.badge-storage {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.25);
+}
+
+/* ===== Extended Portfolio — Comparison Cards ===== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.compare-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.compare-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.compare-card:hover {
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.compare-card--original::before { background: #38bdf8; }
+.compare-card--extended::before { background: #34d399; }
+
+.compare-card__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.compare-card--original .compare-card__title { color: #38bdf8; }
+.compare-card--extended .compare-card__title { color: #34d399; }
+
+.compare-card__subtitle {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-table td {
+  padding: 0.52rem 0;
+  font-size: 0.78rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.compare-table td:first-child {
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.compare-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}

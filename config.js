@@ -36,7 +36,7 @@ export const siteConfig = {
       icon: ['M12 2L2 7l10 5 10-5-10-5', 'M2 17l10 5 10-5', 'M2 12l10 5 10-5']
     },
     {
-      id: 'page2', title: 'AI Premium Rotation', href: 'page2.html', label: 'Tab 2', lang: 'uk',
+      id: 'page2', title: 'Розширений портфель', href: 'page2.html', label: 'Full Loop', lang: 'uk',
       icon: ['M18 20V10', 'M12 20V4', 'M6 20v-6']
     },
     {
