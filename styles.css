@@ -55,8 +55,8 @@
 
   /* ─── Text ─── */
   --text-primary:   #eeeef8;
-  --text-secondary: #a8a8c8;
-  --text-tertiary:  #7272a0;
+  --text-secondary: #c0c0da;
+  --text-tertiary:  #9898be;
 
   /* ─── Borders ─── */
   --border-subtle:  rgba(255, 255, 255, 0.05);
@@ -336,7 +336,7 @@ nav:first-of-type {
   padding: 0.35rem 1rem;
   margin-bottom: 0.25rem;
   border-radius: 999px;
-  font-size: 0.66rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--badge-ipp-text);
@@ -361,7 +361,7 @@ nav:first-of-type {
 }
 
 .hero-attribution {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--text-tertiary);
   margin-top: 0;
   letter-spacing: 0.03em;
@@ -378,7 +378,7 @@ nav:first-of-type {
 .article-label {
   display: inline-flex;
   align-items: center;
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.12em;
@@ -443,7 +443,7 @@ nav:first-of-type {
 }
 
 .metric-label {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-tertiary);
   letter-spacing: 0.09em;
@@ -496,7 +496,7 @@ nav:first-of-type {
   width: fit-content;
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   margin-bottom: 0.2rem;
@@ -689,7 +689,7 @@ footer p {
 }
 
 .bottom-nav-label {
-  font-size: 0.58rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -911,7 +911,7 @@ body.menu-open::before {
 }
 
 .signal-card__period {
-  font-size: 0.64rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: var(--text-tertiary);
   white-space: nowrap;
@@ -933,7 +933,7 @@ body.menu-open::before {
 }
 
 .signal-card__delta {
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -1021,7 +1021,7 @@ body.menu-open::before {
 }
 
 .stocks-level-title {
-  font-size: 0.64rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   color: var(--accent);
@@ -1243,7 +1243,7 @@ body.menu-open::before {
   width: fit-content;
   padding: 0.22rem 0.75rem;
   border-radius: 999px;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   background: rgba(248, 113, 113, 0.1);
@@ -1844,7 +1844,7 @@ body.menu-open::before {
 }
 
 .commodity-card__badge {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #fb923c;
   letter-spacing: 0.06em;
@@ -1951,7 +1951,7 @@ body.menu-open::before {
 }
 
 .builder-card__badge {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2071,7 +2071,7 @@ body.menu-open::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.85);
@@ -2103,7 +2103,7 @@ body.menu-open::before {
 }
 
 .alloc-tier__name {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2122,7 +2122,7 @@ body.menu-open::before {
 }
 
 .alloc-tier__desc {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--text-tertiary);
   line-height: 1.5;
   margin-top: 0.15rem;
@@ -2197,13 +2197,13 @@ body.menu-open::before {
 }
 
 .alloc-chip__name {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--text-tertiary);
   line-height: 1.4;
 }
 
 .alloc-chip__reason {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.55;
   margin-top: 0.35rem;
@@ -2285,7 +2285,7 @@ body.menu-open::before {
 .timing-card--wait::before { background: #38bdf8; }
 
 .timing-card__month {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -2347,7 +2347,7 @@ body.menu-open::before {
 }
 
 .waves__label {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-tertiary);
   letter-spacing: 0.1em;
@@ -2400,7 +2400,7 @@ body.menu-open::before {
 .waves__bar--grid .waves__name    { color: #34d399; }
 
 .waves__detail {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--text-tertiary);
   position: relative;
   margin-left: auto;
@@ -2423,7 +2423,7 @@ body.menu-open::before {
 }
 
 .waves__overlap-text {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-tertiary);
   letter-spacing: 0.08em;
