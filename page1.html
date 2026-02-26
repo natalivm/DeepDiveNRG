@@ -1429,6 +1429,74 @@
       </div>
     </section>
 
+    <!-- ===== Copper-to-Optics: New Bottleneck ===== -->
+    <section class="page-section article-block">
+      <span class="article-label">Оптичний зсув · Лютий 2026</span>
+      <h2 class="article-title">Copper-to-Optics: нове вузьке місце всередині дата-центрів</h2>
+      <div class="article-body">
+        <p>У лютому 2026 року CEO Lumentum Майкл Хьорлстон заявив про <span class="text-highlight">"генераційну зміну гри"</span> — масштабний перехід AI-інфраструктури з мідних з'єднань на оптичні всередині дата-центрів. Причина фізична: при швидкостях 200G–400G на лейн мідний кабель деградує настільки, що його надійна дальність не перевищує <span class="text-highlight">два метри</span>. Далі — тільки світло.</p>
+        <p>Це не віддалена перспектива. Nvidia вже відвантажує Quantum-X InfiniBand зі вбудованою фотонікою (115 Tb/s, 144 порти по 800G), а Spectrum-X Photonics для Ethernet заплановано на другу половину 2026 р. Broadcom запустив серійне виробництво Tomahawk 6 — першого у світі 102.4 Tbps Ethernet-комутатора з інтегрованою Co-Packaged Optics (CPO). Marvell оголосив про придбання Celestial AI за $3.25 млрд, ставлячи на оптичні чіплети для scale-up з'єднань. <strong>Індустрія не дискутує — вона вже будує.</strong></p>
+      </div>
+
+      <div class="signal-grid signal-grid--4">
+        <div class="signal-card signal-card--cyan">
+          <div class="signal-card__header">
+            <span class="signal-card__label">Lumentum: AI-виручка</span>
+            <span class="signal-card__period">FQ2 2026</span>
+          </div>
+          <div class="signal-card__value-row">
+            <span class="signal-card__value">$666M</span>
+            <span class="signal-card__delta positive">+65% YoY</span>
+          </div>
+          <p class="signal-card__desc">Фотоніка для AI — трансивери, OCS, CPO. Четвертий драйвер: optical scale-up.</p>
+        </div>
+
+        <div class="signal-card signal-card--purple">
+          <div class="signal-card__header">
+            <span class="signal-card__label">CPO ринок до 2036</span>
+            <span class="signal-card__period">IDTechEx прогноз</span>
+          </div>
+          <div class="signal-card__value-row">
+            <span class="signal-card__value">&gt;$20B</span>
+            <span class="signal-card__delta positive">CAGR 37%</span>
+          </div>
+          <p class="signal-card__desc">Co-Packaged Optics: інтеграція оптики безпосередньо в switch ASIC. Від ніші до мейнстріму.</p>
+        </div>
+
+        <div class="signal-card signal-card--blue">
+          <div class="signal-card__header">
+            <span class="signal-card__label">Marvell → Celestial AI</span>
+            <span class="signal-card__period">Закриття Q1 2026</span>
+          </div>
+          <div class="signal-card__value-row">
+            <span class="signal-card__value">$3.25B</span>
+          </div>
+          <p class="signal-card__desc">Photonic Fabric чіплети для co-packaging з XPU. Перший комерційний optical scale-up.</p>
+        </div>
+
+        <div class="signal-card signal-card--green">
+          <div class="signal-card__header">
+            <span class="signal-card__label">CPO: економія енергії</span>
+            <span class="signal-card__period">vs традиційні трансивери</span>
+          </div>
+          <div class="signal-card__value-row">
+            <span class="signal-card__value">−70%</span>
+          </div>
+          <p class="signal-card__desc">З ~15 pJ/bit до &lt;5 pJ/bit. Але загальне споживання дата-центрів росте — ефективність не встигає за масштабом.</p>
+        </div>
+      </div>
+
+      <blockquote class="rotation-callout">
+        <strong class="callout-title">Чому це не загрожує нашій тезі</strong>
+        <p>Copper-to-optics — це зміна всередині дата-центру на рівні interconnect (кабелі між GPU, комутатори, NIC). Наша теза — про <strong>інфраструктурний шар нижче</strong>: турбіни, трансформатори, switchgear, transmission lines. Незалежно від того, чи дані рухаються міддю чи світлом між стійками, дата-центру все одно потрібні гігавати електрики, підстанції, системи охолодження і будівельники, які це все збудують. Мідь у WSD — це трансформаторні обмотки, силові кабелі та шинопроводи, а не DAC/AEC кабелі. Різна мідь, різний ринок.</p>
+      </blockquote>
+
+      <div class="article-body">
+        <p><strong>Імплікації для портфеля.</strong> З усіх наших позицій оптичний зсув безпосередньо стосується лише <strong>CSCO</strong> (Кластер 5). Cisco традиційно домінує у мережевому обладнанні на базі електричних з'єднань, але компанія має оптичний актив — Acacia Communications, придбану у 2021 р. за $4.5 млрд. Ключове питання: чи зможе Cisco утримати долю у AI-networking в умовах, коли Broadcom інтегрує CPO у власні ASIC, а Nvidia створює замкнену оптичну екосистему? Цільовий AI-revenue CSCO &gt;$5 млрд на FY26 включає оптичні рішення, але ринок ще не визначив — це комодитизований компонент чи повноцінний платформний бізнес.</p>
+        <p><strong>Нові імена для watchlist (Кластер 5):</strong> Lumentum (LITE) — $666M quarterly revenue, +65% YoY, прямий постачальник фотоніки для hyperscalers. Coherent (COHR) — лідер у 800G/1.6T трансиверах і CPO-компонентах. Marvell (MRVL) — після Celestial AI стає платформою для оптичних interconnects. Ці компанії відповідають логіці нашої тези: фізична інфраструктура з реальним revenue, зростаючими backlog'ами та прямою залежністю від AI buildout. Якщо опти́ка — це "нове вузьке місце" на рівні networking, ці імена заслуговують на місце поруч з CSCO у Кластері 5.</p>
+      </div>
+    </section>
+
     <!-- ===== Cluster 3 Expansion ===== -->
     <section class="page-section article-block">
       <span class="article-label">Розширення кластеру 3</span>
