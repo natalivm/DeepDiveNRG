@@ -1380,6 +1380,38 @@ body.menu-open::before {
   color: #041e26;
 }
 
+/* ===== Grid Builder Pick Cards ===== */
+.builder-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.builder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.builder-card--leader::before { background: #34d399; }
+.builder-card--leader .stock-ticker { color: #34d399; }
+
+.builder-card--diversified::before { background: #a3e635; }
+.builder-card--diversified .stock-ticker { color: #a3e635; }
+
+.badge-builder-leader {
+  background: var(--badge-ipp-bg);
+  color: var(--badge-ipp-text);
+}
+
+.badge-builder-diversified {
+  background: #a3e635;
+  color: #1a2e05;
+}
+
 /* ===== Capex Chain ===== */
 .capex-chain {
   display: flex;
