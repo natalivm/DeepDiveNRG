@@ -1342,3 +1342,71 @@ body.menu-open::before {
   font-weight: 700;
   color: var(--accent);
 }
+
+/* ===== ETF Cards ===== */
+.etf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.etf-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.etf-card:hover {
+  border-color: var(--border);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.etf-card__name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.etf-card__ticker {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.etf-card__facts {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.75rem;
+}
+
+.etf-card__facts li {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 900px) {
+  .etf-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .etf-grid {
+    grid-template-columns: 1fr;
+  }
+}
