@@ -1178,6 +1178,21 @@ body.menu-open::before {
   background: linear-gradient(90deg, #f87171 0%, rgba(248, 113, 113, 0.08) 100%);
 }
 
+.cluster-card--blue {
+  border-color: rgba(56, 189, 248, 0.16);
+  background: linear-gradient(140deg, rgba(56, 189, 248, 0.05) 0%, var(--bg-card) 50%);
+}
+
+.cluster-card--blue::before {
+  background: linear-gradient(90deg, #38bdf8 0%, rgba(56, 189, 248, 0.08) 100%);
+}
+
+.cluster-card--blue .cluster-card__badge {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.22);
+}
+
 .cluster-card__badge {
   display: inline-block;
   width: fit-content;
