@@ -1902,6 +1902,7 @@ body.menu-open::before {
 .builder-card--blue  { --c: #38bdf8;       --cr: 56, 189, 248; }
 .builder-card--green { --c: #34d399;       --cr: 52, 211, 153; }
 .builder-card--cyan  { --c: var(--accent); --cr: 0, 212, 255; }
+.builder-card--amber { --c: #fbbf24;       --cr: 251, 191, 36; }
 
 .builder-card .builder-card__ticker { color: var(--c); }
 .builder-card .builder-card__badge {
@@ -2635,5 +2636,196 @@ body.menu-open::before {
 @media (max-width: 600px) {
   .compare-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FUND HOLDINGS
+   ═══════════════════════════════════════════════════════════ */
+
+.holdings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.holdings-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: 0;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  align-items: start;
+  transition: background 0.15s;
+}
+
+.holdings-row:last-child {
+  border-bottom: none;
+}
+
+.holdings-row:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.holdings-row:nth-child(even) {
+  background: rgba(255,255,255,0.015);
+}
+
+.holdings-row:nth-child(even):hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.holdings-ticker-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.holdings-ticker {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.holdings-layer {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+  letter-spacing: 0.03em;
+}
+
+.holdings-layer--green  { background: rgba(52,211,153,0.15);  color: #34d399; }
+.holdings-layer--blue   { background: rgba(56,189,248,0.15);  color: #38bdf8; }
+.holdings-layer--purple { background: rgba(167,139,250,0.15); color: #a78bfa; }
+.holdings-layer--orange { background: rgba(251,146,60,0.15);  color: #fb923c; }
+
+.holdings-funds-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 0.75rem;
+}
+
+.fund-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.fund-tag--up  { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+.fund-tag--new { background: rgba(148,163,184,0.1);  color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+
+.holdings-note-col {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .holdings-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .holdings-funds-col {
+    padding: 0;
+  }
+
+  .holdings-note-col {
+    padding-left: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INSIDER TABLE
+   ═══════════════════════════════════════════════════════════ */
+
+.insider-table-wrap {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.insider-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  min-width: 640px;
+}
+
+.insider-table thead tr {
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.insider-table th {
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.insider-table td {
+  padding: 0.65rem 0.85rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: middle;
+}
+
+.insider-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.insider-table tbody tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.insider-row--strong td {
+  background: rgba(52,211,153,0.03);
+}
+
+.insider-ticker-cell {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  letter-spacing: 0.04em;
+}
+
+.insider-signal {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+.insider-signal--strong { background: rgba(52,211,153,0.15);  color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+.insider-signal--medium { background: rgba(251,191,36,0.12);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+
+@media (max-width: 640px) {
+  .insider-table th,
+  .insider-table td {
+    padding: 0.5rem 0.6rem;
   }
 }
