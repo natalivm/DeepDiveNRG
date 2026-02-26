@@ -154,28 +154,6 @@ nav:first-of-type {
   /* intentionally empty */
 }
 
-/* ===== Nav Install Button ===== */
-.nav-install-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 1rem;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  background: linear-gradient(130deg, var(--accent), var(--accent-secondary));
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.22);
-  transition: opacity 0.18s, box-shadow 0.18s;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.nav-install-btn:hover {
-  opacity: 0.88;
-  box-shadow: 0 0 28px rgba(0, 212, 255, 0.38);
-}
 
 /* ===== Tabs Bar ===== */
 .tabs-bar {
