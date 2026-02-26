@@ -2434,10 +2434,11 @@ body.menu-open::before {
 /* ── Risk Spectrum ── */
 .spectrum {
   margin-top: 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .spectrum__label {
-  font-size: 0.68rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-tertiary);
   letter-spacing: 0.1em;
@@ -2446,10 +2447,10 @@ body.menu-open::before {
 }
 
 .spectrum__bar {
-  height: 6px;
+  height: 8px;
   border-radius: 6px;
   background: linear-gradient(to right, #34d399, #38bdf8, #fbbf24, #f87171);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
 }
 
 .spectrum__ends {
@@ -2459,7 +2460,7 @@ body.menu-open::before {
 }
 
 .spectrum__end {
-  font-size: 0.62rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-tertiary);
   letter-spacing: 0.04em;
@@ -2482,8 +2483,8 @@ body.menu-open::before {
 }
 
 .spectrum__dot {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: 2px solid;
   flex-shrink: 0;
@@ -2496,7 +2497,7 @@ body.menu-open::before {
 .spectrum__pos--nrg .spectrum__dot  { border-color: #f87171; background: rgba(248, 113, 113, 0.3); }
 
 .spectrum__ticker {
-  font-size: 0.82rem;
+  font-size: 1.05rem;
   font-weight: 900;
   letter-spacing: -0.02em;
 }
@@ -2508,13 +2509,13 @@ body.menu-open::before {
 .spectrum__pos--nrg .spectrum__ticker { color: #f87171; }
 
 .spectrum__meta {
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   color: var(--text-tertiary);
   line-height: 1.45;
 }
 
 .spectrum__pct {
-  font-size: 0.68rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-secondary);
 }
