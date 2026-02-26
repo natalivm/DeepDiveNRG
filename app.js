@@ -28,6 +28,28 @@ function isPageActive(href, currentPage) {
   return href === currentPage || (currentPage === '' && href === 'index.html');
 }
 
+// ===== Nav Install Button =====
+/**
+ * Shows the nav install button and wires up the install prompt.
+ *
+ * @param {BeforeInstallPromptEvent} promptEvent - The deferred install prompt.
+ */
+function initNavInstallButton(promptEvent) {
+  const btn = document.getElementById('nav-install-btn');
+  if (!btn) return;
+
+  let deferredPrompt = promptEvent;
+  btn.hidden = false;
+
+  btn.addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      deferredPrompt = null;
+      btn.hidden = true;
+    });
+  });
+}
+
 // ===== Bottom Navigation =====
 /**
  * Builds and appends a mobile bottom-navigation bar to the page.
@@ -67,31 +89,6 @@ function createBottomNav(pages) {
   document.body.appendChild(nav);
 }
 
-// ===== Hamburger Menu (desktop) =====
-/**
- * Toggles the hamburger menu open/closed and updates ARIA attributes.
- *
- * @param {HTMLElement} toggle - The hamburger button element.
- * @param {HTMLElement} menu - The nav-links list element.
- */
-function initHamburgerMenu(toggle, menu) {
-  toggle.addEventListener('click', () => {
-    const open = toggle.classList.toggle('is-open');
-    menu.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('menu-open', open);
-  });
-
-  menu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      toggle.classList.remove('is-open');
-      menu.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-    });
-  });
-}
-
 /**
  * Highlights the active link in the desktop nav and tabs bar
  * based on the current page URL.
@@ -99,63 +96,18 @@ function initHamburgerMenu(toggle, menu) {
  * @param {string} currentPage - The current page filename (e.g. 'page1.html').
  */
 function highlightActiveLinks(currentPage) {
-  document.querySelectorAll('.nav-links a').forEach((a) => {
-    const href = a.getAttribute('href');
-    if (!href || href.startsWith('#')) return;
-    a.classList.toggle('active', isPageActive(href, currentPage));
-  });
-
   document.querySelectorAll('.tab-link').forEach((tab) => {
     const href = tab.getAttribute('href');
     tab.classList.toggle('tab-active', isPageActive(href, currentPage));
   });
 }
 
-/**
- * Shows the PWA install banner and wires up install / dismiss buttons.
- *
- * @param {BeforeInstallPromptEvent} promptEvent - The deferred install prompt.
- */
-function showInstallBanner(promptEvent) {
-  const banner = document.querySelector('.install-banner');
-  if (!banner) return;
-
-  let deferredPrompt = promptEvent;
-  banner.classList.add('visible');
-
-  const installBtn = banner.querySelector('.install-btn');
-  const dismissBtn = banner.querySelector('.install-dismiss');
-
-  if (installBtn) {
-    installBtn.addEventListener('click', () => {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then(() => {
-        deferredPrompt = null;
-        banner.classList.remove('visible');
-      });
-    });
-  }
-
-  if (dismissBtn) {
-    dismissBtn.addEventListener('click', () => {
-      banner.classList.remove('visible');
-    });
-  }
-}
-
 // ===== DOMContentLoaded initialisation =====
 document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.nav-hamburger');
-  const menu = document.querySelector('.nav-links');
-
-  if (toggle && menu) {
-    initHamburgerMenu(toggle, menu);
-  }
-
   // ===== Page Transition =====
   document.body.classList.add('page-ready');
 
-  // ===== Active link highlight (desktop nav + tabs bar) =====
+  // ===== Active link highlight (tabs bar) =====
   highlightActiveLinks(getCurrentPage());
 
   // ===== Inject bottom nav =====
@@ -179,6 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Install prompt =====
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
-    showInstallBanner(e);
+    initNavInstallButton(e);
   });
 });

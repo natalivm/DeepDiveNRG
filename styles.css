@@ -154,69 +154,27 @@ nav:first-of-type {
   /* intentionally empty */
 }
 
-/* ===== Hamburger Button ===== */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 44px;
-  height: 44px;
-  padding: 10px;
-  background: none;
+/* ===== Nav Install Button ===== */
+.nav-install-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: linear-gradient(130deg, var(--accent), var(--accent-secondary));
+  color: #fff;
   border: none;
   cursor: pointer;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.22);
+  transition: opacity 0.18s, box-shadow 0.18s;
   -webkit-tap-highlight-color: transparent;
-  z-index: 110;
 }
 
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text-secondary);
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-hamburger.is-open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.nav-hamburger.is-open span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-hamburger.is-open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* ===== Nav Links (desktop) ===== */
-.nav-links {
-  display: flex;
-  gap: 0.15rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--text-tertiary);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.005em;
-  padding: 0.4rem 0.85rem;
-  border-radius: 8px;
-  transition: color 0.18s, background 0.18s;
-}
-
-.nav-links a:hover {
-  color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.nav-links a.active {
-  color: var(--accent);
-  background: rgba(0, 212, 255, 0.08);
+.nav-install-btn:hover {
+  opacity: 0.88;
+  box-shadow: 0 0 28px rgba(0, 212, 255, 0.38);
 }
 
 /* ===== Tabs Bar ===== */
@@ -650,37 +608,6 @@ nav:first-of-type {
   background: var(--bg-card-hover);
 }
 
-/* ===== Install Banner ===== */
-.install-banner {
-  position: fixed;
-  bottom: -100%;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border);
-  padding: 1.5rem var(--h-pad) calc(1.5rem + var(--safe-bottom));
-  text-align: center;
-  transition: bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(24px);
-}
-
-.install-banner.visible {
-  bottom: 0;
-}
-
-.install-banner p {
-  font-size: 0.92rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  color: var(--text-secondary);
-}
-
-.install-actions {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-}
 
 /* ===== Footer ===== */
 footer {
@@ -792,10 +719,6 @@ footer p {
 
 /* ===== Responsive — Tablet & Mobile ===== */
 @media (max-width: 768px) {
-  /* Bottom nav handles navigation on mobile */
-  .nav-hamburger {
-    display: none;
-  }
 
   .tabs-bar {
     display: none;
@@ -831,9 +754,6 @@ footer p {
     gap: 1rem;
   }
 
-  .install-banner.visible {
-    bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
-  }
 
   footer {
     flex-direction: column;
