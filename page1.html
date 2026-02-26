@@ -1021,6 +1021,175 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== Scenario Analysis ===== -->
+    <section class="page-section article-block">
+      <span class="article-label">Сценарний аналіз</span>
+      <h2 class="article-title">Сценарії та орієнтовні ймовірності</h2>
+
+      <div class="scenario-disclaimer">
+        <strong>Застереження.</strong> Ймовірності нижче — суб'єктивні судження, а не результат формальної моделі. Вони корисні як орієнтир для розміщення ризику, але не мають точності, яку числа можуть імплікувати.
+      </div>
+
+      <div class="scenario-grid">
+        <!-- Base Case -->
+        <div class="scenario-card scenario-card--green">
+          <span class="scenario-card__emoji" aria-hidden="true">🟢</span>
+          <span class="scenario-card__title">Base Case</span>
+          <span class="scenario-card__subtitle">Контрольоване розширення</span>
+          <span class="scenario-card__probability">45%</span>
+          <p class="scenario-card__desc">ISM New Orders стабільно &gt;54, hyperscalers реалізують 80%+ AI capex, ФРС 1–2 зниження/рік, Brent $60–70. Industrials і Energy outperform. IPPs (CEG, NRG, VST) конвертують PPA pipeline в підписані угоди. Grid equipment (ETN, HUBB, GEV) нарощує маржу на дефіцитному ринку.</p>
+        </div>
+
+        <!-- Bull Case -->
+        <div class="scenario-card scenario-card--blue">
+          <span class="scenario-card__emoji" aria-hidden="true">🚀</span>
+          <span class="scenario-card__title">Bull Case</span>
+          <span class="scenario-card__subtitle">Повноцінний industrial boom</span>
+          <span class="scenario-card__probability">15%</span>
+          <p class="scenario-card__desc">ISM &gt;58 кілька місяців поспіль, hyperscaler capex перевищує guidance, reshoring + defense додають шар. Мідь і срібло у структурному дефіциті. Industrials +20–30%+. CEG і NRG — максимальні бенефіціари через power price spike і premium PPA контракти.</p>
+        </div>
+
+        <!-- Bear Case -->
+        <div class="scenario-card scenario-card--red">
+          <span class="scenario-card__emoji" aria-hidden="true">🔴</span>
+          <span class="scenario-card__title">Bear Case</span>
+          <span class="scenario-card__subtitle">Рецесія / Credit event</span>
+          <span class="scenario-card__probability">30%</span>
+          <p class="scenario-card__desc">ISM падає нижче 48, DeepSeek 2.0 → hyperscalers урізають capex, credit spreads &gt;200 bps. IPPs (CEG, NRG) — найбільший удар. Захист: NEE, AEP, HUBB (aging grid не зникає), ENB (31 р. дивіденд), CSCO (FCF підлога ~$13B). Поки private credit не проходив реального стрес-тесту — ймовірність вища, ніж ринок закладає.</p>
+        </div>
+
+        <!-- Tail Risk -->
+        <div class="scenario-card scenario-card--amber">
+          <span class="scenario-card__emoji" aria-hidden="true">⚡</span>
+          <span class="scenario-card__title">Tail Risk</span>
+          <span class="scenario-card__subtitle">Геополітика / енерго-шок</span>
+          <span class="scenario-card__probability">10%</span>
+          <p class="scenario-card__desc">Геополітичний тригер або кібератака на grid. Ринки -25–40%. Gold $3500+. Grid companies — максимальна волатильність, але бенефіціари відбудови. Defense tailwind для BA. IPPs і grid equipment — спочатку sell-off, потім лідери recovery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Portfolio Construction ===== -->
+    <section class="page-section article-block">
+      <span class="article-label">Побудова портфеля</span>
+      <h2 class="article-title">Чотири принципи позиціонування</h2>
+
+      <div class="principles-list">
+        <div class="principle-item">
+          <h3 class="principle-item__title"><span class="principle-item__number">1 ·</span> Розрізняти AI-залежний і AI-незалежний попит</h3>
+          <p class="principle-item__desc">IPPs (CEG, NRG, VST) і частково GEV/ENR1N мають суттєву частку PPA і замовлень, прив'язаних до AI дата-центрів. ETN, HUBB, PWR, MTZ, NEE, AEP — мають попит, який існує незалежно від AI-буму: aging grid, energy transition mandates, regulatory requirements. Оптимальний портфель поєднує обидва типи, а не ставить лише на AI-acceleration.</p>
+        </div>
+
+        <div class="principle-item">
+          <h3 class="principle-item__title"><span class="principle-item__number">2 ·</span> Не плутати "дешевий" і "якісний"</h3>
+          <p class="principle-item__desc">Barclays попереджає: small caps вже відірвалися від fundamentals — перегляди earnings не підтримують поточних оцінок у багатьох low-quality cyclicals. Фільтр: позитивна earnings динаміка + сильний баланс + видимість revenue (backlog, підписані угоди, регульований дохід). Backlog ENR1N у €146 млрд, FCF CSCO у $13+ млрд, рекордний backlog PWR — це зовсім інша категорія, ніж micro-cap industrial з P/S 15x і нульовим прибутком.</p>
+        </div>
+
+        <div class="principle-item">
+          <h3 class="principle-item__title"><span class="principle-item__number">3 ·</span> Поетапний вхід та контроль концентрації</h3>
+          <p class="principle-item__desc">Навіть при впевненості у тезі — all-in одним заходом є найгіршою тактикою. Поступовий вхід протягом 3–6 місяців із ребалансуванням щоквартально, орієнтуючись на ISM, capex-guidance hyperscalers і динаміку credit spreads. Один сектор — не більше 20–25% портфеля. Особливо важливо обмежувати концентрацію в IPPs з огляду на їхню залежність від AI capex-циклу.</p>
+        </div>
+
+        <div class="principle-item">
+          <h3 class="principle-item__title"><span class="principle-item__number">4 ·</span> Шукати асиметрію, а не просто "дешевизну"</h3>
+          <p class="principle-item__desc">Асиметрія — коли downside обмежений (кеш, дивіденди, backlog, регульований дохід), а upside значний (re-rating, FCF inflection, розширення мультиплікатора). CSCO з ~18x forward P/E і $14+ млрд FCF — один тип асиметрії: захисний, із сильним cash flow. NRG з BYOP моделлю і 5.4 ГВт LoI pipeline — інший: вищий ризик, але і значніший потенціал. ENB із &gt;6% yield і 31-річним дивідендним стріком — третій: максимальна стабільність для консервативного інвестора.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Commodity Hedge ===== -->
+    <section class="page-section article-block">
+      <span class="article-label">Commodity hedge</span>
+      <div class="article-body">
+        <p><strong>WSD · Мідь:</strong> WSD — чиста ставка на commodity без операційного ризику компанії. Підходить як macro hedge і диверсифікатор поруч з equity positions. Альтернативи: COPA ETF (copper miners), FCX (Freeport-McMoRan — найбільший публічний виробник міді). Якщо впевненість у grid supercycle висока — WSD/COPA/FCX органічно доповнюють ETN, HUBB, PWR.</p>
+      </div>
+
+      <div class="commodity-card">
+        <div class="commodity-card__header">
+          <span class="commodity-card__ticker">WSD</span>
+          <span class="commodity-card__name">Copper ETC / Мідь</span>
+          <span class="commodity-card__badge">Commodity hedge</span>
+        </div>
+        <div class="commodity-card__body">
+          <p class="commodity-card__desc"><strong>Чому:</strong> Кожен трансформатор, кожен кілометр кабелю, кожна підстанція вимагає міді. Grid supercycle = copper supercycle. Якщо ETN і HUBB — це equity exposure на дефіцит grid equipment, то WSD — це commodity exposure на той самий попит без корпоративного ризику виконання. Goldman Sachs: структурний дефіцит міді через EV + AI + grid — один з найбільш переконливих commodity calls на наступне десятиліття. Додатково: NATO 3.5% ВВП → defense spending → бронетехніка, ракети, кораблі — все це мідь.</p>
+          <table class="commodity-card__table">
+            <tbody>
+              <tr>
+                <td>Драйвери</td>
+                <td>Grid + EV + Defense</td>
+              </tr>
+              <tr>
+                <td>Тип</td>
+                <td>Commodity, без corp. ризику</td>
+              </tr>
+              <tr>
+                <td>Захист DeepSeek</td>
+                <td>Сильний — aging grid незалежний</td>
+              </tr>
+              <tr>
+                <td>Кореляція</td>
+                <td>Висока з industrials cycle</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Cluster 3 Expansion ===== -->
+    <section class="page-section article-block">
+      <span class="article-label">Розширення кластеру 3</span>
+      <h2 class="article-title">PWR, EME, PRIM — Physical Builders в тезі</h2>
+      <div class="article-body">
+        <p>З восьми розглянутих назв у портфель залишаємо три: EME, PRIM як доповнення до вже наявного PWR. Вони будують physical grid та utility infrastructure з частковим або повним захистом від DeepSeek-сценарію. STRL, IESC — вилучені через надмірну AI-залежність нових DC builds. ANET і CLS — вилучені як повністю hyperscaler-залежні. EME — найкращий risk/reward (~22–24x P/E, healthcare/industrial/water hedge, рекордна маржа). PRIM — найбільш захищений від bear case (utility core + найдешевший ~16–18x). PWR — лідер ринку, backlog $39.2B, але 35x P/E вже враховує якість.</p>
+      </div>
+
+      <!-- EME Card -->
+      <div class="builder-card builder-card--blue">
+        <div class="builder-card__header">
+          <span class="builder-card__ticker">EME</span>
+          <span class="builder-card__name">EMCOR Group · USA</span>
+          <span class="builder-card__badge">Найширша платформа</span>
+        </div>
+        <div class="builder-card__body">
+          <p class="builder-card__desc">Найбільш диверсифікований builder в групі. Electrical + mechanical + fire/life safety — повний пакет послуг для одного дата-центру. RPOs $12.61 млрд (+29% YoY), з яких $4.3 млрд — мережі і комунікації (майже doubled YoY), 80%+ — органічне зростання. Операційна маржа 9.1% — рекорд в історії компанії. Розширився з 4 datacenter markets у 2019 до 16+ сьогодні. Q4 2025 звіт виходить 26 лютого — потенційний catalyst. Ризик: кожна нова географія стискає маржу короткостроково.</p>
+          <table class="builder-card__table">
+            <tbody>
+              <tr>
+                <td>RPOs загалом</td>
+                <td>$12.61B (+29% YoY)</td>
+              </tr>
+              <tr>
+                <td>DC RPOs</td>
+                <td>$4.3B (~doubled YoY)</td>
+              </tr>
+              <tr>
+                <td>Op. маржа</td>
+                <td>9.1% (рекорд)</td>
+              </tr>
+              <tr>
+                <td>Forward P/E</td>
+                <td>~22–24x</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Portfolio in Practice ===== -->
+    <section class="page-section article-block">
+      <span class="article-label">Портфель на практиці</span>
+      <h2 class="article-title">Енергетичний портфель: як розподілити між п'ятьма позиціями</h2>
+      <div class="article-body">
+        <p>Весь аналіз вище веде до одного практичного питання: якщо обмежитись п'ятьма позиціями в енергетиці — як їх розподілити? Відповідь будується навколо одного принципу: два шари захисту + один шар асиметрії. 70% портфеля тримається в будь-якому сценарії, 20% захищені backlog&#x27;ом, 10% — свідома ставка на bull case.</p>
+      </div>
+
+      <div class="rotation-callout">
+        <p>Якщо агресивніше: NRG → 15%, додати PWR замість частини ETN. Якщо консервативніше: прибрати NRG, збільшити ENB або NEE до 30%. Ключовий принцип залишається: не менше 50% в активах де попит існує незалежно від AI-циклу.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
