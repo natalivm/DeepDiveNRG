@@ -6,6 +6,19 @@ A dark-themed website for DeepDiveNRG, a next-generation energy solutions compan
 
 Visit the live site at: [https://natalivm.github.io/DeepDiveNRG/](https://natalivm.github.io/DeepDiveNRG/)
 
+## Lightweight & Mobile-Friendly
+
+The site has been refactored to be simple, lightweight, and mobile-first:
+
+- **No CSS gradients** — all gradient backgrounds, text gradients, and decorative gradient elements replaced with solid colours.
+- **No animations or transitions** — all CSS transitions and animated effects removed.
+- **No backdrop-filter / blur** — frosted-glass effects on the navigation, tabs bar, and bottom nav removed.
+- **No heavy box-shadows or glow effects** — removed glow shadows on badges and nav indicators.
+- **No fixed background images or scroll effects** — `background-attachment: fixed` and parallax removed.
+- **No page-load fade** — the opacity-based page-load animation removed.
+- **System font stack** — Google Fonts (Inter) removed; the site now uses the device's native system font (`Segoe UI`, `system-ui`, `-apple-system`), saving a network round-trip.
+- **Viewport meta** — all pages already include `<meta name="viewport" content="width=device-width, initial-scale=1">`.
+
 ## GitHub Pages Deployment
 
 Deployment is automated via GitHub Actions. On every push to `main`, the workflow builds the site to `_site/` and deploys it to GitHub Pages.
@@ -42,11 +55,11 @@ DeepDiveNRG/
 
 ### Features
 
-- **Dark theme** — Deep dark backgrounds (`#0d0f14`) with cyan (`#00c8ff`) accent colour
+- **Dark theme** — Deep dark backgrounds with cyan accent colour
 - **Responsive layout** — Fluid typography via `clamp()`, collapses gracefully on mobile
 - **Navigation tabs** — Tab 1, Tab 2, Tab 3 linking to dedicated sub-pages
 - **Back buttons** — Each sub-page has a styled `← Back` link returning to the main page
-- **Sticky header** — Frosted-glass navigation bar with blur backdrop
+- **Sticky header** — Solid-background navigation bar (no blur)
 - **GitHub Pages compatible** — `.nojekyll` file ensures plain HTML/CSS is served directly
 
 ### Notes
