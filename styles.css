@@ -2334,3 +2334,201 @@ body.menu-open::before {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Summary Visuals ===== */
+
+/* ── Three Waves ── */
+.waves {
+  margin-top: 2.25rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.waves__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.waves__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.waves__bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  border-radius: 10px;
+}
+
+.waves__bar--ai { border: 1px solid rgba(0, 212, 255, 0.18); }
+.waves__bar--ai::before { background: var(--accent); }
+
+.waves__bar--defense { border: 1px solid rgba(167, 139, 250, 0.18); }
+.waves__bar--defense::before { background: #a78bfa; }
+
+.waves__bar--grid { border: 1px solid rgba(52, 211, 153, 0.18); }
+.waves__bar--grid::before { background: #34d399; }
+
+.waves__icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.waves__name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.waves__bar--ai .waves__name      { color: var(--accent); }
+.waves__bar--defense .waves__name { color: #a78bfa; }
+.waves__bar--grid .waves__name    { color: #34d399; }
+
+.waves__detail {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  position: relative;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* ── Overlap connector ── */
+.waves__overlap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0;
+}
+
+.waves__overlap-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-strong), transparent);
+}
+
+.waves__overlap-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Risk Spectrum ── */
+.spectrum {
+  margin-top: 2.25rem;
+}
+
+.spectrum__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.spectrum__bar {
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #34d399, #38bdf8, #fbbf24, #f87171);
+  margin-bottom: 0.35rem;
+}
+
+.spectrum__ends {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.spectrum__end {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.spectrum__positions {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  gap: 2px;
+}
+
+.spectrum__pos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.spectrum__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.spectrum__pos--enb .spectrum__dot  { border-color: #34d399; background: rgba(52, 211, 153, 0.3); }
+.spectrum__pos--nee .spectrum__dot  { border-color: #34d399; background: rgba(52, 211, 153, 0.3); }
+.spectrum__pos--etn .spectrum__dot  { border-color: #38bdf8; background: rgba(56, 189, 248, 0.3); }
+.spectrum__pos--ceg .spectrum__dot  { border-color: #fbbf24; background: rgba(251, 191, 36, 0.3); }
+.spectrum__pos--nrg .spectrum__dot  { border-color: #f87171; background: rgba(248, 113, 113, 0.3); }
+
+.spectrum__ticker {
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.spectrum__pos--enb .spectrum__ticker { color: #34d399; }
+.spectrum__pos--nee .spectrum__ticker { color: #34d399; }
+.spectrum__pos--etn .spectrum__ticker { color: #38bdf8; }
+.spectrum__pos--ceg .spectrum__ticker { color: #fbbf24; }
+.spectrum__pos--nrg .spectrum__ticker { color: #f87171; }
+
+.spectrum__meta {
+  font-size: 0.62rem;
+  color: var(--text-tertiary);
+  line-height: 1.45;
+}
+
+.spectrum__pct {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+  .waves__detail {
+    display: none;
+  }
+
+  .spectrum__meta {
+    display: none;
+  }
+
+  .spectrum__positions {
+    gap: 0;
+  }
+}
