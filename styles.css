@@ -1792,3 +1792,118 @@ body.menu-open::before {
   color: var(--text-secondary);
   margin: 0;
 }
+
+/* ===== Commodity Hedge Card ===== */
+.commodity-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  overflow: hidden;
+  margin-top: 1.75rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.commodity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+  background: #fb923c;
+}
+
+.commodity-card:hover {
+  border-color: rgba(251, 146, 60, 0.22);
+  box-shadow: 0 8px 32px rgba(251, 146, 60, 0.1), var(--shadow-sm);
+  background: var(--bg-card-hover);
+}
+
+.commodity-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.commodity-card__ticker {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #fb923c;
+  letter-spacing: -0.03em;
+}
+
+.commodity-card__name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.commodity-card__badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #fb923c;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  background: rgba(251, 146, 60, 0.1);
+  border: 1px solid rgba(251, 146, 60, 0.25);
+  border-radius: 999px;
+  margin-left: auto;
+}
+
+.commodity-card__body {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.commodity-card__desc {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.commodity-card__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.commodity-card__table td {
+  padding: 0.5rem 0.65rem;
+  font-size: 0.78rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.commodity-card__table tr:last-child td {
+  border-bottom: none;
+}
+
+.commodity-card__table td:first-child {
+  font-weight: 700;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  width: 1%;
+}
+
+.commodity-card__table td:last-child {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .commodity-card__body {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .commodity-card__badge {
+    margin-left: 0;
+  }
+}
