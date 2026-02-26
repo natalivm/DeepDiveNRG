@@ -28,28 +28,6 @@ function isPageActive(href, currentPage) {
   return href === currentPage || (currentPage === '' && href === 'index.html');
 }
 
-// ===== Nav Install Button =====
-/**
- * Shows the nav install button and wires up the install prompt.
- *
- * @param {BeforeInstallPromptEvent} promptEvent - The deferred install prompt.
- */
-function initNavInstallButton(promptEvent) {
-  const btn = document.getElementById('nav-install-btn');
-  if (!btn) return;
-
-  let deferredPrompt = promptEvent;
-  btn.hidden = false;
-
-  btn.addEventListener('click', () => {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(() => {
-      deferredPrompt = null;
-      btn.hidden = true;
-    });
-  });
-}
-
 // ===== Bottom Navigation =====
 /**
  * Builds and appends a mobile bottom-navigation bar to the page.
@@ -128,9 +106,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== Install prompt =====
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    initNavInstallButton(e);
-  });
 });
