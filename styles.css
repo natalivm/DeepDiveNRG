@@ -1223,6 +1223,21 @@ body.menu-open::before {
   border-color: rgba(251, 191, 36, 0.22);
 }
 
+.cluster-card--purple {
+  border-color: rgba(167, 139, 250, 0.16);
+  background: linear-gradient(140deg, rgba(167, 139, 250, 0.05) 0%, var(--bg-card) 50%);
+}
+
+.cluster-card--purple::before {
+  background: linear-gradient(90deg, #a78bfa 0%, rgba(167, 139, 250, 0.08) 100%);
+}
+
+.cluster-card--purple .cluster-card__badge {
+  background: rgba(167, 139, 250, 0.1);
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.22);
+}
+
 .cluster-card__badge {
   display: inline-block;
   width: fit-content;
@@ -1450,6 +1465,40 @@ body.menu-open::before {
   background: rgba(251, 191, 36, 0.15);
   color: #fbbf24;
   border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+/* ===== Defensive AI Pick Cards ===== */
+.ai-infra-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-infra-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.ai-infra-card--cash::before { background: #a78bfa; }
+.ai-infra-card--cash .stock-ticker { color: #a78bfa; }
+
+.ai-infra-card--physical::before { background: #fb923c; }
+.ai-infra-card--physical .stock-ticker { color: #fb923c; }
+
+.badge-cash-machine {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.badge-physical-ai {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.25);
 }
 
 /* ===== Capex Chain ===== */
