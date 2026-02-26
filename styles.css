@@ -1542,106 +1542,70 @@ body.menu-open::before {
   color: var(--accent);
 }
 
-/* ===== Risks Table ===== */
-.risks-table-wrap {
-  margin-top: 2rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 16px;
-  border: 1px solid var(--border-subtle);
+/* ===== ETF Cards ===== */
+.etf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.etf-card {
   background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
-.risks-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 640px;
-}
-
-.risks-table thead th {
-  padding: 1rem 1.25rem;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.risks-table thead th:first-child {
-  width: 150px;
-  min-width: 130px;
-}
-
-.risks-table tbody td {
-  padding: 1.1rem 1.25rem;
-  font-size: 0.86rem;
-  line-height: 1.75;
-  color: var(--text-secondary);
-  border-bottom: 1px solid var(--border-subtle);
-  vertical-align: top;
-}
-
-.risks-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.risks-table tbody tr {
-  transition: background 0.2s ease;
-}
-
-.risks-table tbody tr:hover {
+.etf-card:hover {
+  border-color: var(--border);
   background: var(--bg-card-hover);
+  box-shadow: var(--shadow-md);
 }
 
-.risk-name {
-  display: inline-block;
-  padding: 0.22rem 0.7rem;
-  border-radius: 6px;
+.etf-card__name {
   font-size: 0.78rem;
-  font-weight: 700;
-  white-space: nowrap;
-  letter-spacing: 0.01em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
-.risk-name--red {
-  background: rgba(248, 113, 113, 0.12);
-  color: #f87171;
-  border: 1px solid rgba(248, 113, 113, 0.22);
-}
-
-.risk-name--amber {
-  background: rgba(251, 191, 36, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.22);
-}
-
-.risk-name--purple {
-  background: rgba(167, 139, 250, 0.12);
-  color: #a78bfa;
-  border: 1px solid rgba(167, 139, 250, 0.22);
-}
-
-.risk-name--cyan {
-  background: rgba(0, 212, 255, 0.12);
+.etf-card__ticker {
+  font-size: 1.45rem;
+  font-weight: 900;
   color: var(--accent);
-  border: 1px solid rgba(0, 212, 255, 0.22);
+  letter-spacing: -0.02em;
 }
 
-.risk-name--orange {
-  background: rgba(251, 146, 60, 0.12);
-  color: #fb923c;
-  border: 1px solid rgba(251, 146, 60, 0.22);
+.etf-card__facts {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.75rem;
 }
 
-@media (max-width: 768px) {
-  .risks-table-wrap {
-    margin-left: calc(-1 * var(--h-pad));
-    margin-right: calc(-1 * var(--h-pad));
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
+.etf-card__facts li {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 900px) {
+  .etf-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .etf-grid {
+    grid-template-columns: 1fr;
   }
 }
