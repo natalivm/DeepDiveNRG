@@ -1541,3 +1541,107 @@ body.menu-open::before {
   font-weight: 700;
   color: var(--accent);
 }
+
+/* ===== Risks Table ===== */
+.risks-table-wrap {
+  margin-top: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.risks-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.risks-table thead th {
+  padding: 1rem 1.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.risks-table thead th:first-child {
+  width: 150px;
+  min-width: 130px;
+}
+
+.risks-table tbody td {
+  padding: 1.1rem 1.25rem;
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+}
+
+.risks-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.risks-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.risks-table tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+.risk-name {
+  display: inline-block;
+  padding: 0.22rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.risk-name--red {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.22);
+}
+
+.risk-name--amber {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.22);
+}
+
+.risk-name--purple {
+  background: rgba(167, 139, 250, 0.12);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.22);
+}
+
+.risk-name--cyan {
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(0, 212, 255, 0.22);
+}
+
+.risk-name--orange {
+  background: rgba(251, 146, 60, 0.12);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.22);
+}
+
+@media (max-width: 768px) {
+  .risks-table-wrap {
+    margin-left: calc(-1 * var(--h-pad));
+    margin-right: calc(-1 * var(--h-pad));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
