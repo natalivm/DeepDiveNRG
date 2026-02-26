@@ -2051,3 +2051,183 @@ body.menu-open::before {
     margin-left: 0;
   }
 }
+
+/* ===== Portfolio Allocation Visual ===== */
+.alloc {
+  margin-top: 1.75rem;
+}
+
+/* ── Segmented bar ── */
+.alloc-bar {
+  display: flex;
+  height: 38px;
+  border-radius: 10px;
+  overflow: hidden;
+  gap: 2px;
+  margin-bottom: 2rem;
+}
+
+.alloc-bar__seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.85);
+  transition: flex 0.4s ease;
+}
+
+.alloc-bar__seg--green { background: #34d399; flex: 70; }
+.alloc-bar__seg--blue  { background: #38bdf8; flex: 20; }
+.alloc-bar__seg--amber { background: #fbbf24; flex: 10; }
+
+/* ── Tier rows ── */
+.alloc-tier {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.alloc-tier:last-child {
+  padding-bottom: 0;
+}
+
+.alloc-tier__label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.alloc-tier__name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.alloc-tier__name--green { color: #34d399; }
+.alloc-tier__name--blue  { color: #38bdf8; }
+.alloc-tier__name--amber { color: #fbbf24; }
+
+.alloc-tier__pct {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.alloc-tier__desc {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  margin-top: 0.15rem;
+}
+
+/* ── Stock chips inside tier ── */
+.alloc-tier__stocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.alloc-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1 1 200px;
+  max-width: 280px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.alloc-chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 14px 14px 0 0;
+}
+
+.alloc-chip:hover {
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.alloc-chip--green::before { border-color: rgba(52, 211, 153, 0.18); background: #34d399; }
+.alloc-chip--green:hover   { border-color: rgba(52, 211, 153, 0.22); }
+
+.alloc-chip--blue::before  { border-color: rgba(56, 189, 248, 0.18); background: #38bdf8; }
+.alloc-chip--blue:hover    { border-color: rgba(56, 189, 248, 0.22); }
+
+.alloc-chip--amber::before { border-color: rgba(251, 191, 36, 0.18); background: #fbbf24; }
+.alloc-chip--amber:hover   { border-color: rgba(251, 191, 36, 0.22); }
+
+.alloc-chip__row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.alloc-chip__ticker {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.alloc-chip--green .alloc-chip__ticker { color: #34d399; }
+.alloc-chip--blue  .alloc-chip__ticker { color: #38bdf8; }
+.alloc-chip--amber .alloc-chip__ticker { color: #fbbf24; }
+
+.alloc-chip__pct {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.alloc-chip__name {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.alloc-chip__reason {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-top: 0.35rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 700px) {
+  .alloc-tier {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .alloc-tier__label {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.65rem;
+  }
+
+  .alloc-tier__pct {
+    font-size: 1.25rem;
+  }
+
+  .alloc-chip {
+    max-width: none;
+  }
+}
