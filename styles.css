@@ -1178,6 +1178,66 @@ body.menu-open::before {
   background: linear-gradient(90deg, #f87171 0%, rgba(248, 113, 113, 0.08) 100%);
 }
 
+.cluster-card--blue {
+  border-color: rgba(56, 189, 248, 0.16);
+  background: linear-gradient(140deg, rgba(56, 189, 248, 0.05) 0%, var(--bg-card) 50%);
+}
+
+.cluster-card--blue::before {
+  background: linear-gradient(90deg, #38bdf8 0%, rgba(56, 189, 248, 0.08) 100%);
+}
+
+.cluster-card--blue .cluster-card__badge {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.22);
+}
+
+.cluster-card--green {
+  border-color: rgba(52, 211, 153, 0.16);
+  background: linear-gradient(140deg, rgba(52, 211, 153, 0.05) 0%, var(--bg-card) 50%);
+}
+
+.cluster-card--green::before {
+  background: linear-gradient(90deg, #34d399 0%, rgba(52, 211, 153, 0.08) 100%);
+}
+
+.cluster-card--green .cluster-card__badge {
+  background: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.22);
+}
+
+.cluster-card--amber {
+  border-color: rgba(251, 191, 36, 0.16);
+  background: linear-gradient(140deg, rgba(251, 191, 36, 0.05) 0%, var(--bg-card) 50%);
+}
+
+.cluster-card--amber::before {
+  background: linear-gradient(90deg, #fbbf24 0%, rgba(251, 191, 36, 0.08) 100%);
+}
+
+.cluster-card--amber .cluster-card__badge {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.22);
+}
+
+.cluster-card--purple {
+  border-color: rgba(167, 139, 250, 0.16);
+  background: linear-gradient(140deg, rgba(167, 139, 250, 0.05) 0%, var(--bg-card) 50%);
+}
+
+.cluster-card--purple::before {
+  background: linear-gradient(90deg, #a78bfa 0%, rgba(167, 139, 250, 0.08) 100%);
+}
+
+.cluster-card--purple .cluster-card__badge {
+  background: rgba(167, 139, 250, 0.1);
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.22);
+}
+
 .cluster-card__badge {
   display: inline-block;
   width: fit-content;
@@ -1300,6 +1360,145 @@ body.menu-open::before {
 .badge-mixed {
   background: linear-gradient(90deg, #a78bfa, #fb923c);
   color: #fff;
+}
+
+/* ===== Grid Equipment Pick Cards ===== */
+.grid-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.grid-card--turbine::before { background: linear-gradient(90deg, #fb923c, #38bdf8); }
+.grid-card--turbine .stock-ticker { color: #38bdf8; }
+
+.grid-card--switchgear::before { background: #38bdf8; }
+.grid-card--switchgear .stock-ticker { color: #38bdf8; }
+
+.grid-card--transformer::before { background: #fbbf24; }
+.grid-card--transformer .stock-ticker { color: #fbbf24; }
+
+.grid-card--thermal::before { background: var(--accent); }
+.grid-card--thermal .stock-ticker { color: var(--accent); }
+
+.badge-turbine {
+  background: linear-gradient(90deg, #fb923c, #38bdf8);
+  color: #fff;
+}
+
+.badge-switchgear {
+  background: var(--badge-grid-bg);
+  color: var(--badge-grid-text);
+}
+
+.badge-transformer {
+  background: var(--badge-uranium-bg);
+  color: var(--badge-uranium-text);
+}
+
+.badge-thermal {
+  background: var(--accent);
+  color: #041e26;
+}
+
+/* ===== Grid Builder Pick Cards ===== */
+.builder-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.builder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.builder-card--leader::before { background: #34d399; }
+.builder-card--leader .stock-ticker { color: #34d399; }
+
+.builder-card--diversified::before { background: #a3e635; }
+.builder-card--diversified .stock-ticker { color: #a3e635; }
+
+.badge-builder-leader {
+  background: var(--badge-ipp-bg);
+  color: var(--badge-ipp-text);
+}
+
+.badge-builder-diversified {
+  background: #a3e635;
+  color: #1a2e05;
+}
+
+/* ===== Utility Pick Cards ===== */
+.utility-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.utility-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+  background: #fbbf24;
+}
+
+.utility-card .stock-ticker { color: #fbbf24; }
+
+.badge-defensive {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+/* ===== Defensive AI Pick Cards ===== */
+.ai-infra-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-infra-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.ai-infra-card--cash::before { background: #a78bfa; }
+.ai-infra-card--cash .stock-ticker { color: #a78bfa; }
+
+.ai-infra-card--physical::before { background: #fb923c; }
+.ai-infra-card--physical .stock-ticker { color: #fb923c; }
+
+.badge-cash-machine {
+  background: rgba(167, 139, 250, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.badge-physical-ai {
+  background: rgba(251, 146, 60, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.25);
 }
 
 /* ===== Capex Chain ===== */
