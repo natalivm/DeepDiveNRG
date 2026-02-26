@@ -1317,6 +1317,54 @@ body.menu-open::before {
   color: #fff;
 }
 
+/* ===== Grid Equipment Pick Cards ===== */
+.grid-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 16px 16px 0 0;
+}
+
+.grid-card--turbine::before { background: linear-gradient(90deg, #fb923c, #38bdf8); }
+.grid-card--turbine .stock-ticker { color: #38bdf8; }
+
+.grid-card--switchgear::before { background: #38bdf8; }
+.grid-card--switchgear .stock-ticker { color: #38bdf8; }
+
+.grid-card--transformer::before { background: #fbbf24; }
+.grid-card--transformer .stock-ticker { color: #fbbf24; }
+
+.grid-card--thermal::before { background: var(--accent); }
+.grid-card--thermal .stock-ticker { color: var(--accent); }
+
+.badge-turbine {
+  background: linear-gradient(90deg, #fb923c, #38bdf8);
+  color: #fff;
+}
+
+.badge-switchgear {
+  background: var(--badge-grid-bg);
+  color: var(--badge-grid-text);
+}
+
+.badge-transformer {
+  background: var(--badge-uranium-bg);
+  color: var(--badge-uranium-text);
+}
+
+.badge-thermal {
+  background: var(--accent);
+  color: #041e26;
+}
+
 /* ===== Capex Chain ===== */
 .capex-chain {
   display: flex;
